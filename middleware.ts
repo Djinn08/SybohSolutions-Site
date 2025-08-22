@@ -8,7 +8,7 @@ const RATE_LIMIT_MAX_REQUESTS = 100; // 100 requests per minute
 
 function getRateLimitKey(req: NextRequest): string {
   // Use IP address for rate limiting
-  const ip = req.ip || req.headers.get('x-forwarded-for') || 'unknown';
+  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
   return `rate_limit:${ip}`;
 }
 

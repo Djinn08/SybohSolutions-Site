@@ -17,7 +17,7 @@ const CONTACT_RATE_LIMIT_WINDOW = 5 * 60 * 1000; // 5 minutes
 const CONTACT_RATE_LIMIT_MAX = 3; // 3 submissions per 5 minutes
 
 function getContactRateLimitKey(req: NextRequest): string {
-  const ip = req.ip || req.headers.get('x-forwarded-for') || 'unknown';
+  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
   return `contact:${ip}`;
 }
 
@@ -117,7 +117,7 @@ export async function POST(req: NextRequest) {
         <p><strong>Message:</strong></p>
         <p>${sanitizedMessage}</p>
         <hr>
-        <p><small>Submitted from IP: ${req.ip || req.headers.get('x-forwarded-for') || 'unknown'}</small></p>
+        <p><small>Submitted from IP: ${req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown'}</small></p>
       </div>
     `;
 

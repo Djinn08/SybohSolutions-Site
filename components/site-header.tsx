@@ -12,7 +12,7 @@ export function SiteHeader() {
             alt="Syboh Solutions Logo"
             width={0}
             height={0}
-            className="h-10 w-auto md:h-12"
+            className="h-8 w-auto md:h-10"
             priority
             unoptimized
           />

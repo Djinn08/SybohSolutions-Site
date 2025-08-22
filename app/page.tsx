@@ -9,12 +9,13 @@ export default function Home() {
       <section className="text-center">
         <div className="mb-8 flex justify-center">
           <Image
-            src="/images/SybohWeblogo.png"
+            src="/images/sybohfrogtransparentbackground.png"
             alt="Syboh Solutions LLC"
-            width={400}
-            height={200}
+            width={0}
+            height={0}
             className="h-auto w-full max-w-md md:max-w-lg"
             priority
+            unoptimized
           />
         </div>
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-muted px-3 py-1 text-xs text-muted-foreground">
