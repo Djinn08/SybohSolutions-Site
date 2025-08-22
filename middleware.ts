@@ -104,7 +104,7 @@ export function middleware(request: NextRequest) {
 
   for (const header of suspiciousHeaders) {
     const value = request.headers.get(header);
-    if (value && value.includes('localhost') || value.includes('127.0.0.1')) {
+    if (value && (value.includes('localhost') || value.includes('127.0.0.1'))) {
       return new NextResponse('Forbidden', { status: 403 });
     }
   }
