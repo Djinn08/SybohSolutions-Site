@@ -1,7 +1,7 @@
 export default function HospitalityTraining() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Hospitality Training</h1>
+      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Hospitality Training</h1>
       <p className="text-muted-foreground mt-2">
         Operator-first training for front-of-house teams: service standards, upsells, and guest retention.
       </p>

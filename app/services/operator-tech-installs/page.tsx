@@ -1,7 +1,7 @@
 export default function OperatorTechInstalls() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Operator Tech Installs</h1>
+      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Operator Tech Installs</h1>
       <p className="text-muted-foreground mt-2">
         High-ROI systems like self-pour beer and vending. We plan, install, train, and optimize.
       </p>

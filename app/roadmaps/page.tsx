@@ -1,13 +1,13 @@
 export default function RoadmapsPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Roadmaps</h1>
+      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Roadmaps</h1>
       <p className="text-muted-foreground mt-2 max-w-2xl">
         Clear, staged paths: launch → stability → credit-building → growth.
       </p>
 
       <section className="mt-8 space-y-6">
-        <details className="rounded-xl border p-4" open>
+        <details className="rounded-xl border border-muted p-4" open>
           <summary className="cursor-pointer text-lg font-medium">Vending Machines</summary>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             <li>Launch: placement, machine selection, basic routes</li>
@@ -17,7 +17,7 @@ export default function RoadmapsPage() {
           </ul>
         </details>
 
-        <details className="rounded-xl border p-4">
+        <details className="rounded-xl border border-muted p-4">
           <summary className="cursor-pointer text-lg font-medium">Self-Pour / BohBar</summary>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             <li>Launch: sizing, licensing, install plan</li>
@@ -27,7 +27,7 @@ export default function RoadmapsPage() {
           </ul>
         </details>
 
-        <details className="rounded-xl border p-4">
+        <details className="rounded-xl border border-muted p-4">
           <summary className="cursor-pointer text-lg font-medium">Hospitality Training</summary>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             <li>Launch: service standards, menu fluency</li>
@@ -37,7 +37,7 @@ export default function RoadmapsPage() {
           </ul>
         </details>
 
-        <details className="rounded-xl border p-4">
+        <details className="rounded-xl border border-muted p-4">
           <summary className="cursor-pointer text-lg font-medium">Website & Branding</summary>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             <li>Launch: fast site, clear CTA, basic SEO</li>
@@ -50,7 +50,7 @@ export default function RoadmapsPage() {
 
       <div className="mt-10">
         <a
-          className="inline-flex h-11 items-center justify-center rounded-md border px-6 hover:bg-muted"
+          className="inline-flex h-11 items-center justify-center rounded-md border border-muted px-6 hover:bg-muted transition-colors"
           href="/api/onepager.pdf"
         >
           Download one-pager (PDF)

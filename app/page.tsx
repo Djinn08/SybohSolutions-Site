@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY } from "@/lib/constants";
 import { CtaBanner } from "@/components/ui/cta-banner";
 
@@ -6,7 +7,17 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <section className="text-center">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
+        <div className="mb-8 flex justify-center">
+          <Image
+            src="/images/SybohWeblogo.png"
+            alt="Syboh Solutions LLC"
+            width={400}
+            height={200}
+            className="h-auto w-full max-w-md md:max-w-lg"
+            priority
+          />
+        </div>
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-muted px-3 py-1 text-xs text-muted-foreground">
           <span>Operator-first</span>
           <span className="text-foreground">•</span>
           <span>Real-world ROI</span>
@@ -23,13 +34,13 @@ export default function Home() {
             href={COMPANY.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center justify-center rounded-md bg-foreground px-6 text-background transition-colors hover:opacity-90"
+            className="inline-flex h-11 items-center justify-center rounded-md gradient-bg px-6 text-background font-medium transition-all hover:opacity-90"
           >
             Book a consult
           </Link>
           <Link
             href="/services"
-            className="inline-flex h-11 items-center justify-center rounded-md border px-6 hover:bg-muted"
+            className="inline-flex h-11 items-center justify-center rounded-md border border-muted px-6 hover:bg-muted transition-colors"
           >
             Explore services
           </Link>
@@ -57,7 +68,7 @@ export default function Home() {
           <Link
             key={s.title}
             href={s.href}
-            className="rounded-xl border p-6 transition hover:bg-muted"
+            className="rounded-xl border border-muted p-6 transition hover:bg-muted"
           >
             <h3 className="text-lg font-semibold tracking-tight">{s.title}</h3>
             <p className="text-muted-foreground mt-2 text-sm">{s.desc}</p>
@@ -73,7 +84,7 @@ export default function Home() {
             { title: "Install/Train", desc: "Deploy systems and upskill your team." },
             { title: "Optimize", desc: "Iterate to drive cash-flow and retention." },
           ].map((step, i) => (
-            <li key={step.title} className="rounded-xl border p-5">
+            <li key={step.title} className="rounded-xl border border-muted p-5">
               <div className="text-sm text-muted-foreground">Step {i + 1}</div>
               <div className="mt-2 text-lg font-medium">{step.title}</div>
               <p className="text-muted-foreground mt-1 text-sm">{step.desc}</p>

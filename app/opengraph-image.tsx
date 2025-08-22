@@ -12,8 +12,8 @@ export default async function Image() {
       <div
         style={{
           fontSize: 64,
-          background: "linear-gradient(135deg, #0a0a0a, #1a1a1a)",
-          color: "white",
+          background: "#0d1117",
+          color: "#f0f0f0",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -21,10 +21,38 @@ export default async function Image() {
           alignItems: "flex-start",
           justifyContent: "flex-end",
           padding: 80,
+          position: "relative",
         }}
       >
-        <div style={{ fontSize: 36, opacity: 0.85 }}>{COMPANY.shortName}</div>
-        <div style={{ fontWeight: 700 }}>{COMPANY.tagline}</div>
+        {/* Gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "linear-gradient(135deg, rgba(0, 230, 230, 0.1), rgba(214, 255, 87, 0.1))",
+          }}
+        />
+        <div style={{ 
+          fontSize: 36, 
+          opacity: 0.85,
+          background: "linear-gradient(135deg, #00e6e6, #d6ff57)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+          fontWeight: 600,
+        }}>
+          {COMPANY.shortName}
+        </div>
+        <div style={{ 
+          fontWeight: 700,
+          fontSize: 48,
+          marginTop: 16,
+        }}>
+          {COMPANY.tagline}
+        </div>
       </div>
     ),
     size

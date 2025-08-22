@@ -1,7 +1,7 @@
 export default function Vending() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Vending Machines</h1>
+      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Vending Machines</h1>
       <p className="text-muted-foreground mt-2">
         Placement, routes, product mix, cash-flow. Build stable, growing vending income.
       </p>
