@@ -10,10 +10,11 @@ export function SiteHeader() {
           <Image
             src="/images/sybohfrogtransparentbackground.png"
             alt="Syboh Solutions Logo"
-            width={40}
-            height={40}
-            className="h-8 w-8 md:h-10 md:w-10"
+            width={0}
+            height={0}
+            className="h-10 w-auto md:h-12"
             priority
+            unoptimized
           />
           <span className="text-lg font-semibold gradient-text">{COMPANY.shortName}</span>
         </Link>
