@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ error: "No email provider configured" }, { status: 500 });
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

@@ -19,7 +19,7 @@ export default function ContactPage() {
       const data = await res.json();
       if (!res.ok || !data.ok) throw new Error("Failed to send");
       setStatus("success");
-    } catch (e) {
+    } catch {
       setStatus("error");
       setError("Something went wrong. Please try again.");
     }
@@ -29,7 +29,7 @@ export default function ContactPage() {
     <main className="mx-auto max-w-3xl px-6 py-12">
       <h1 className="text-3xl font-semibold tracking-tight gradient-text">Contact</h1>
       <p className="text-muted-foreground mt-2">
-        Tell us about your goals. We'll reply within one business day.
+        Tell us about your goals. We&apos;ll reply within one business day.
       </p>
       <form
         className="mt-8 grid gap-4"
@@ -59,7 +59,7 @@ export default function ContactPage() {
         </button>
 
         {status === "success" && (
-          <p className="text-green-400">Thanks! We'll be in touch shortly.</p>
+          <p className="text-green-400">Thanks! We&apos;ll be in touch shortly.</p>
         )}
         {status === "error" && (
           <p className="text-red-400">{error}</p>
