@@ -18,12 +18,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced robots.txt with security directives
 - Security.txt file for vulnerability reporting
 - Comprehensive security documentation (`SECURITY.md`)
+- Project documentation and development guidelines
+- `.cursorrules` file with comprehensive project rules
+- `PROMPTS/00_BOOTSTRAP_AGENT.md` for AI assistant context
+- `BRAND_GUIDE.md` with detailed brand standards
+- Enhanced `README.md` with Cursor workflow instructions
+- `/content` directory structure for content management
+- Sample `content/home.json` with structured content data
 
 ### Changed
 - Updated logo placement: smaller transparent frog logo in header, larger transparent logo in hero section
 - Fixed TypeScript errors related to IP address access in NextRequest
 - Updated contact form validation with stricter regex patterns
 - Enhanced error handling and user feedback
+- Updated brand colors to match new brand guide standards
+- Enhanced project documentation and development workflow
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

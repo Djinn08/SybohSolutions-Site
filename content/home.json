@@ -1,32 +1,64 @@
 {
   "hero": {
-    "headline": "Operator-first systems. Real-world ROI.",
-    "subhead": "Design. Install. Train. Scale.",
-    "primaryCta": "Book a consult",
-    "secondaryCta": "Explore services"
+    "title": "Operator-first systems. Real-world ROI.",
+    "subtitle": "We build technology solutions that work for the people who use them every day.",
+    "cta": "Book a consult",
+    "ctaLink": "/contact"
   },
-  "servicesIntro": [
-    {
-      "title": "Hospitality Training",
-      "desc": "Tighter service, happier guests, higher check averages.",
-      "href": "/services/hospitality-training"
-    },
-    {
-      "title": "Operator Tech Installs",
-      "desc": "Self-pour beer, vending, and high-ROI systems.",
-      "href": "/services/operator-tech-installs"
-    },
-    {
-      "title": "Vending Machines",
-      "desc": "From placement to optimization and cash-flow.",
-      "href": "/services/vending"
-    }
-  ],
-  "howWeWork": [
-    { "title": "Assess", "desc": "We map goals, constraints, and ROI drivers." },
-    { "title": "Install/Train", "desc": "Deploy systems and upskill your team." },
-    { "title": "Optimize", "desc": "Iterate to drive cash-flow and retention." }
-  ]
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for modern operations",
+    "items": [
+      {
+        "title": "Hospitality Training",
+        "description": "Custom training programs for hospitality staff",
+        "link": "/services/hospitality-training"
+      },
+      {
+        "title": "Operator Tech Installs",
+        "description": "Seamless technology integration for operators",
+        "link": "/services/operator-tech-installs"
+      },
+      {
+        "title": "Vending Solutions",
+        "description": "Smart vending technology and management",
+        "link": "/services/vending"
+      },
+      {
+        "title": "Site Creation",
+        "description": "Custom website and digital presence development",
+        "link": "/services/site-creation"
+      }
+    ]
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "subtitle": "Our proven process for delivering results",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "We start by understanding your unique challenges and goals"
+      },
+      {
+        "title": "Design",
+        "description": "Create solutions tailored to your specific needs and constraints"
+      },
+      {
+        "title": "Deploy",
+        "description": "Implement with minimal disruption to your operations"
+      },
+      {
+        "title": "Support",
+        "description": "Ongoing support and optimization to ensure continued success"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Let's discuss how we can help optimize your operations",
+    "button": "Contact Us",
+    "link": "/contact"
+  }
 }
 
 

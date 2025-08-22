@@ -63,3 +63,45 @@ All editable text lives in `content/` as JSON. Example: `content/home.json`.
 - Roadmaps: `app/roadmaps/page.tsx`
 - About: `app/about/page.tsx`
 - Contact: `app/contact/page.tsx`
+
+## Working with Cursor
+
+### Getting Started
+- Start a chat and run `/bootstrap` (or paste `PROMPTS/00_BOOTSTRAP_AGENT.md`)
+- Key documentation: `SECURITY.md`, `BRAND_GUIDE.md`, `CHANGELOG.md`
+
+### Development Workflow
+1. **Before making changes**: Read relevant documentation
+2. **When editing UI**: Ensure responsive, accessible, semantic HTML
+3. **When adding content**: Propose edits in `/content` directory first
+4. **After completing tasks**: Append concise entry to `CHANGELOG.md`
+5. **Before deployment**: Test locally and verify security measures
+
+### Key Commands
+```bash
+# Development
+npm run dev
+
+# Build
+npm run build
+
+# Lint
+npm run lint
+
+# Deploy (Vercel auto-deploys on push)
+git add . && git commit -m "update" && git push
+```
+
+### Project Structure
+- `/components` - Reusable UI components
+- `/app` - Next.js App Router pages
+- `/lib` - Utilities and configurations
+- `/public` - Static assets
+- `/content` - Copy and content management
+- `/PROMPTS` - AI assistant prompts
+
+### Security & Branding
+- **Security**: Follow guidelines in `SECURITY.md` - maintain "boringly secure" approach
+- **Branding**: Use colors and fonts from `BRAND_GUIDE.md`
+- **Logo**: Transparent frog logo at `h-12 w-auto` in header
+- **Environment**: Never commit secrets - use Vercel environment variables

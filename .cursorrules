@@ -1,0 +1,46 @@
+# Syboh Solutions – Project Rules
+
+## Core Principles
+- Always read and ground answers in:
+  - README.md
+  - SECURITY.md
+  - BRAND_GUIDE.md
+  - CHANGELOG.md
+  - PROMPTS/00_BOOTSTRAP_AGENT.md
+
+## Technology Stack
+- Default stack: Next.js 15 (App Router), Tailwind CSS v4, TypeScript, Vercel
+- Use modern React patterns (hooks, server components)
+- Prefer native browser APIs over heavy libraries
+
+## Branding Standards
+- Background: deep navy #0E1420
+- Accent gradient: #1AE0F2 → #58F272 → #F2E91A
+- Text: #F5F5F5 (off-white)
+- Fonts: Poppins or Montserrat for headings (600–700 weight), Inter for body (400–500 weight)
+- Logo: Use transparent frog logo (`/public/images/sybohfrogtransparentbackground.png`) in header at `h-12 w-auto`
+
+## Security Requirements
+- Never hardcode secrets; use Vercel environment variables
+- Security must stay "boringly secure": maintain headers, CSP, input validation, rate limiting
+- Don't weaken security measures without explicit request
+- Follow security guidelines in SECURITY.md
+
+## Development Standards
+- When editing UI, ensure responsive design, accessibility (WCAG AA contrast), semantic HTML
+- When adding pages/components, update CHANGELOG.md and reference where copy lives in /content
+- Use TypeScript strict mode
+- Prefer server components over client components when possible
+- Implement proper error boundaries and loading states
+
+## Code Quality
+- Use ESLint and Prettier for code formatting
+- Write meaningful commit messages
+- Test changes locally before deployment
+- Follow Next.js 15 best practices
+
+## File Organization
+- Keep components in `/components` directory
+- Store static assets in `/public`
+- Use `/lib` for utilities and configurations
+- Maintain `/content` for copy and content management
