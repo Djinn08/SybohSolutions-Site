@@ -1,5 +1,39 @@
+# Syboh Solutions - Robots.txt
+# Security-focused configuration
+
 User-agent: *
 Allow: /
 
+# Block access to sensitive areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Block common bot patterns
+User-agent: *
+Disallow: /api/contact
+Disallow: /api/onepager.pdf
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block suspicious bots
+User-agent: *
+Disallow: /
+
+# Sitemap location
 Sitemap: https://sybohsolutions.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
 
