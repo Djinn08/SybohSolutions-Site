@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "headline": "Operator-first systems. Real-world ROI.",
+    "subhead": "Design. Install. Train. Scale.",
+    "primaryCta": "Book a consult",
+    "secondaryCta": "Explore services"
+  },
+  "servicesIntro": [
+    {
+      "title": "Hospitality Training",
+      "desc": "Tighter service, happier guests, higher check averages.",
+      "href": "/services/hospitality-training"
+    },
+    {
+      "title": "Operator Tech Installs",
+      "desc": "Self-pour beer, vending, and high-ROI systems.",
+      "href": "/services/operator-tech-installs"
+    },
+    {
+      "title": "Vending Machines",
+      "desc": "From placement to optimization and cash-flow.",
+      "href": "/services/vending"
+    }
+  ],
+  "howWeWork": [
+    { "title": "Assess", "desc": "We map goals, constraints, and ROI drivers." },
+    { "title": "Install/Train", "desc": "Deploy systems and upskill your team." },
+    { "title": "Optimize", "desc": "Iterate to drive cash-flow and retention." }
+  ]
+}
+
+
