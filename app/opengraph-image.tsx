@@ -38,10 +38,7 @@ export default async function Image() {
         <div style={{ 
           fontSize: 36, 
           opacity: 0.85,
-          background: "linear-gradient(135deg, #00e6e6, #d6ff57)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
+          color: "#00e6e6",
           fontWeight: 600,
         }}>
           {COMPANY.shortName}
@@ -50,6 +47,7 @@ export default async function Image() {
           fontWeight: 700,
           fontSize: 48,
           marginTop: 16,
+          color: "#f0f0f0",
         }}>
           {COMPANY.tagline}
         </div>
