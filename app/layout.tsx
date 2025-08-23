@@ -21,21 +21,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(COMPANY.siteUrl),
   title: {
-    default: `${COMPANY.shortName} — ${COMPANY.tagline}`,
-    template: `%s — ${COMPANY.shortName}`,
+    default: "Syboh Solutions | Digital Tools & Business Support",
+    template: `%s — Syboh Solutions`,
   },
-  description: COMPANY.tagline,
+  description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
   openGraph: {
-    title: `${COMPANY.shortName}`,
-    description: COMPANY.tagline,
+    title: "Syboh Solutions | Digital Tools & Business Support",
+    description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
     url: COMPANY.siteUrl,
     siteName: COMPANY.shortName,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: COMPANY.shortName,
-    description: COMPANY.tagline,
+    title: "Syboh Solutions | Digital Tools & Business Support",
+    description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
   },
 };
 

@@ -6,50 +6,50 @@
     "ctaLink": "/contact"
   },
   "services": {
-    "title": "Our Services",
+    "title": "What We Do",
     "subtitle": "Comprehensive solutions for modern operations",
     "items": [
       {
-        "title": "Hospitality Training",
-        "description": "Custom training programs for hospitality staff",
-        "link": "/services/hospitality-training"
+        "title": "Operations Optimization",
+        "description": "Streamline systems and improve efficiency",
+        "link": "/services"
       },
       {
-        "title": "Operator Tech Installs",
-        "description": "Seamless technology integration for operators",
+        "title": "On-Site Tech Installations",
+        "description": "Set up POS, kiosks, displays, and hardware",
         "link": "/services/operator-tech-installs"
       },
       {
-        "title": "Vending Solutions",
-        "description": "Smart vending technology and management",
-        "link": "/services/vending"
+        "title": "SaaS Tools & Digital Products",
+        "description": "Showcase in-house tools and digital solutions",
+        "link": "/services"
       },
       {
-        "title": "Site Creation",
-        "description": "Custom website and digital presence development",
+        "title": "Websites & Ongoing Support",
+        "description": "Creation, optimization, retainers, and updates",
         "link": "/services/site-creation"
       }
     ]
   },
   "howWeWork": {
-    "title": "How We Work",
-    "subtitle": "Our proven process for delivering results",
+    "title": "Our Process",
+    "subtitle": "A simple, proven approach to delivering results",
     "steps": [
       {
-        "title": "Discovery",
-        "description": "We start by understanding your unique challenges and goals"
+        "title": "Listen",
+        "description": "Understand your goals"
       },
       {
-        "title": "Design",
-        "description": "Create solutions tailored to your specific needs and constraints"
+        "title": "Plan",
+        "description": "Propose clear solutions"
       },
       {
-        "title": "Deploy",
-        "description": "Implement with minimal disruption to your operations"
+        "title": "Build",
+        "description": "Deliver the project or tool"
       },
       {
         "title": "Support",
-        "description": "Ongoing support and optimization to ensure continued success"
+        "description": "Keep everything running smoothly"
       }
     ]
   },

@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced `README.md` with Cursor workflow instructions
 - `/content` directory structure for content management
 - Sample `content/home.json` with structured content data
+- Subtle linen texture background for enhanced visual appeal
+- New favicon using SybohWeblogo.png for better brand recognition
 
 ### Changed
 - Updated logo placement: smaller transparent frog logo in header, larger transparent logo in hero section
@@ -33,6 +35,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced error handling and user feedback
 - Updated brand colors to match new brand guide standards
 - Enhanced project documentation and development workflow
+- **Page Title & Metadata**: Updated to "Syboh Solutions | Digital Tools & Business Support" with new description
+- **Navigation Labels**: "Services" → "What We Do", "Roadmaps" → "Our Process"
+- **Homepage Content**: Rewrote offerings as plain-English buckets with clear value propositions
+- **Process Section**: Replaced jargon-heavy content with simple 4-step process (Listen, Plan, Build, Support)
+- **Visual Design**: Added subtle linen texture background for enhanced visual appeal
+- **Favicon**: Updated to use SybohWeblogo.png for better brand recognition
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

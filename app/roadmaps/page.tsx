@@ -1,51 +1,43 @@
 export default function RoadmapsPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Roadmaps</h1>
+      <h1 className="text-3xl font-semibold tracking-tight gradient-text">Our Process</h1>
       <p className="text-muted-foreground mt-2 max-w-2xl">
-        Clear, staged paths: launch → stability → credit-building → growth.
+        A simple, proven approach to delivering results for your business.
       </p>
 
-      <section className="mt-8 space-y-6">
-        <details className="rounded-xl border border-muted p-4" open>
-          <summary className="cursor-pointer text-lg font-medium">Vending Machines</summary>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Launch: placement, machine selection, basic routes</li>
-            <li>Stability: product mix, maintenance, cash handling</li>
-            <li>Credit-building: vendor terms, small credit lines</li>
-            <li>Growth: expand routes, optimize ROAS</li>
-          </ul>
-        </details>
-
-        <details className="rounded-xl border border-muted p-4">
-          <summary className="cursor-pointer text-lg font-medium">Self-Pour / BohBar</summary>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Launch: sizing, licensing, install plan</li>
-            <li>Stability: staff training, loss prevention, uptime</li>
-            <li>Credit-building: equipment financing partners</li>
-            <li>Growth: events, membership, per-oz margin optimization</li>
-          </ul>
-        </details>
-
-        <details className="rounded-xl border border-muted p-4">
-          <summary className="cursor-pointer text-lg font-medium">Hospitality Training</summary>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Launch: service standards, menu fluency</li>
-            <li>Stability: pre-shift routines, table-turn playbooks</li>
-            <li>Credit-building: reviews, repeat guests</li>
-            <li>Growth: upsell systems, event playbooks</li>
-          </ul>
-        </details>
-
-        <details className="rounded-xl border border-muted p-4">
-          <summary className="cursor-pointer text-lg font-medium">Website & Branding</summary>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Launch: fast site, clear CTA, basic SEO</li>
-            <li>Stability: content cadence, local SEO</li>
-            <li>Credit-building: case studies, testimonials</li>
-            <li>Growth: campaigns, partnerships</li>
-          </ul>
-        </details>
+      <section className="mt-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              title: "Listen",
+              desc: "We start by understanding your unique challenges, goals, and constraints. This helps us propose solutions that actually work for your business.",
+              icon: "👂"
+            },
+            {
+              title: "Plan",
+              desc: "Based on what we learn, we create a clear roadmap with specific deliverables, timelines, and success metrics.",
+              icon: "📋"
+            },
+            {
+              title: "Build",
+              desc: "We deliver the project or tool, keeping you updated throughout the process and making adjustments as needed.",
+              icon: "🔨"
+            },
+            {
+              title: "Support",
+              desc: "We don't just walk away. We provide ongoing support, maintenance, and optimization to ensure continued success.",
+              icon: "🛠️"
+            },
+          ].map((step, i) => (
+            <div key={step.title} className="rounded-xl border border-muted p-6">
+              <div className="text-3xl mb-3">{step.icon}</div>
+              <div className="text-sm text-muted-foreground mb-2">Step {i + 1}</div>
+              <h3 className="text-lg font-semibold tracking-tight mb-2">{step.title}</h3>
+              <p className="text-muted-foreground text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <div className="mt-10">

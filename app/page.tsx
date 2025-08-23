@@ -48,42 +48,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16 grid gap-6 md:grid-cols-3">
-        {[
-          {
-            title: "Hospitality Training",
-            desc: "Tighter service, happier guests, higher check averages.",
-            href: "/services/hospitality-training",
-          },
-          {
-            title: "Operator Tech Installs",
-            desc: "Self-pour beer, vending, and high-ROI systems.",
-            href: "/services/operator-tech-installs",
-          },
-          {
-            title: "Vending Machines",
-            desc: "From placement to optimization and cash-flow.",
-            href: "/services/vending",
-          },
-        ].map((s) => (
-          <Link
-            key={s.title}
-            href={s.href}
-            className="rounded-xl border border-muted p-6 transition hover:bg-muted"
-          >
-            <h3 className="text-lg font-semibold tracking-tight">{s.title}</h3>
-            <p className="text-muted-foreground mt-2 text-sm">{s.desc}</p>
-          </Link>
-        ))}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold tracking-tight gradient-text mb-6">What We Do</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              title: "Operations Optimization",
+              desc: "Streamline systems and improve efficiency.",
+              href: "/services",
+            },
+            {
+              title: "On-Site Tech Installations",
+              desc: "Set up POS, kiosks, displays, and hardware.",
+              href: "/services/operator-tech-installs",
+            },
+            {
+              title: "SaaS Tools & Digital Products",
+              desc: "Showcase in-house tools and digital solutions.",
+              href: "/services",
+            },
+            {
+              title: "Websites & Ongoing Support",
+              desc: "Creation, optimization, retainers, and updates.",
+              href: "/services/site-creation",
+            },
+          ].map((s) => (
+            <Link
+              key={s.title}
+              href={s.href}
+              className="rounded-xl border border-muted p-6 transition hover:bg-muted"
+            >
+              <h3 className="text-lg font-semibold tracking-tight">{s.title}</h3>
+              <p className="text-muted-foreground mt-2 text-sm">{s.desc}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="mt-16">
-        <h2 className="text-2xl font-semibold tracking-tight">How we work</h2>
-        <ol className="mt-4 grid gap-4 md:grid-cols-3">
+        <h2 className="text-2xl font-semibold tracking-tight gradient-text mb-6">Our Process</h2>
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { title: "Assess", desc: "We map goals, constraints, and ROI drivers." },
-            { title: "Install/Train", desc: "Deploy systems and upskill your team." },
-            { title: "Optimize", desc: "Iterate to drive cash-flow and retention." },
+            { title: "Listen", desc: "Understand your goals." },
+            { title: "Plan", desc: "Propose clear solutions." },
+            { title: "Build", desc: "Deliver the project or tool." },
+            { title: "Support", desc: "Keep everything running smoothly." },
           ].map((step, i) => (
             <li key={step.title} className="rounded-xl border border-muted p-5">
               <div className="text-sm text-muted-foreground">Step {i + 1}</div>

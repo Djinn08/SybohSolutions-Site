@@ -17,18 +17,23 @@ export default function Icon() {
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 24,
-          background: 'linear-gradient(135deg, #00e6e6, #d6ff57)',
+          background: '#0d1117',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0d1117',
-          fontWeight: 700,
         }}
       >
-        S
+        <img
+          src="https://sybohsolutions.com/images/SybohWeblogo.png"
+          alt="Syboh Solutions"
+          style={{
+            width: '80%',
+            height: '80%',
+            objectFit: 'contain',
+          }}
+        />
       </div>
     ),
     // ImageResponse options
