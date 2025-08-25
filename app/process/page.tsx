@@ -73,7 +73,7 @@ export default function ProcessPage() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentStep * 100}%)` }}
             >
-              {processSteps.map((step, index) => (
+                             {processSteps.map((step) => (
                 <div 
                   key={step.step}
                   className="w-full flex-shrink-0 px-8 py-16 text-center"
@@ -154,9 +154,9 @@ export default function ProcessPage() {
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
             Ready to get started?
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Let's discuss how our process can work for your business.
-          </p>
+                     <p className="text-muted-foreground mb-8">
+             Let&apos;s discuss how our process can work for your business.
+           </p>
           <Link
             href={COMPANY.calendlyUrl}
             target="_blank"

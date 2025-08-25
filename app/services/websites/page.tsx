@@ -103,7 +103,7 @@ export default function WebsitesPage() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentService * 100}%)` }}
             >
-                             {services.map((service, index) => (
+                             {services.map((service) => (
                  <div 
                    key={service.title}
                    className="w-full flex-shrink-0 px-8 py-16 text-center"
@@ -196,9 +196,9 @@ export default function WebsitesPage() {
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
             Ready to build your digital presence?
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Let's discuss how we can create a website that converts and keeps you ahead of the competition.
-          </p>
+                     <p className="text-muted-foreground mb-8">
+             Let&apos;s discuss how we can create a website that converts and keeps you ahead of the competition.
+           </p>
           <Link
             href={COMPANY.calendlyUrl}
             target="_blank"

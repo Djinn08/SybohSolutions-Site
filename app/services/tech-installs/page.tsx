@@ -87,7 +87,7 @@ export default function TechInstallsPage() {
           Tech Installs
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Tools that work on day one. From POS to kiosks and displays, we install tech that's reliable, intuitive, and ready for your operators.
+          Tools that work on day one. From POS to kiosks and displays, we install tech that&apos;s reliable, intuitive, and ready for your operators.
         </p>
       </section>
 
@@ -103,7 +103,7 @@ export default function TechInstallsPage() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentService * 100}%)` }}
             >
-                             {services.map((service, index) => (
+                             {services.map((service) => (
                  <div 
                    key={service.title}
                    className="w-full flex-shrink-0 px-8 py-16 text-center"
@@ -196,9 +196,9 @@ export default function TechInstallsPage() {
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
             Ready to install reliable tech?
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Let's discuss how we can set up tools that work from day one.
-          </p>
+                     <p className="text-muted-foreground mb-8">
+             Let&apos;s discuss how we can set up tools that work from day one.
+           </p>
           <Link
             href={COMPANY.calendlyUrl}
             target="_blank"
