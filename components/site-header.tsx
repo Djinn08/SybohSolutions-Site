@@ -30,7 +30,11 @@ export function SiteHeader() {
                 e.preventDefault();
                 const element = document.querySelector(l.href.substring(1));
                 if (element) {
+                  // Element exists on current page, scroll to it
                   element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  // Element doesn't exist, navigate to homepage then scroll
+                  window.location.href = l.href;
                 }
               } : undefined}
             >

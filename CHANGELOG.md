@@ -67,6 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Navigation & UX Improvements**: Added smooth scrolling to layout, removed secondary CTA from hero, updated carousel autoplay to 12s with hover pause
 - **Contact Form Enhancement**: Improved JSON response handling and error management, updated to use CONTACT_TO environment variable
 - **Tech Installs Enhancement**: Added Operator-First Financing as key differentiator with three financing options, comparison table, FAQ section, and dedicated financing page
+- **Navigation Fix**: Fixed "What We Do" navbar button to work from all pages by navigating to homepage then scrolling to section
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type
