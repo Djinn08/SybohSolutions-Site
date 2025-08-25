@@ -82,7 +82,7 @@ class Logger {
         name: data.name,
         email: data.email,
         company: data.company,
-        messageLength: data.message?.length || 0,
+        messageLength: typeof data.message === 'string' ? data.message.length : 0,
         error: error || null
       },
       source: 'contact-form'
