@@ -20,7 +20,18 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden gap-6 md:flex">
           {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              key={l.href} 
+              href={l.href} 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              onClick={l.href.startsWith('/#') ? (e) => {
+                e.preventDefault();
+                const element = document.querySelector(l.href.substring(1));
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              } : undefined}
+            >
               {l.label}
             </Link>
           ))}

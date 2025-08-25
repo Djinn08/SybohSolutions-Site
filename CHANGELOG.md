@@ -30,6 +30,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Local logging system (`lib/logger.ts`) for automatic log generation
 - Enhanced contact form validation with real-time error feedback
 - Improved success/error messaging for contact form submissions
+- New dedicated process page with full-width carousel (Assess ⇄ Implement ⇄ Retain)
+- Service-specific pages with carousel navigation (Operations, Tech Installs, SaaS Tools, Websites)
+- Smooth scroll navigation for "What We Do" section
+- Auto-advancing carousels with manual navigation controls and step indicators
+- Enhanced service page content with expanded explanations, key bullet points, and case study placeholders
 
 ### Changed
 - Updated logo placement: smaller transparent frog logo in header, larger transparent logo in hero section
@@ -50,6 +55,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Our Process Section**: Changed to 3-step process: Assess, Install/Train, Optimize
 - **Logo Updates**: Replaced hero image and site header logo with sybohfrogtransparentbackgroundLOGO.png
 - **Hero Section Layout**: Improved visual hierarchy with smaller logo, larger tagline, bigger buttons, and scroll indicator
+- **Site Structure**: Removed "Our Process" section from homepage (now dedicated page only)
+- **Navigation**: Updated "What We Do" to smooth scroll to section instead of separate page
+- **Service Descriptions**: Updated with new benefit-driven blurbs and "Explore" buttons
+- **Process Page**: Removed PDF download button, added full-width carousel with 3-step process
+- **Service Pages**: Created individual pages with carousel navigation showing all services
+- **Content Updates**: Updated service descriptions with more compelling, benefit-focused copy
+- **Service Page Content**: Enhanced with expanded explanations, key bullet points, and case study placeholders for each service
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type
