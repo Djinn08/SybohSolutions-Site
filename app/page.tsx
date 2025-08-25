@@ -9,7 +9,7 @@ export default function Home() {
       <section className="text-center">
         <div className="mb-8 flex flex-col items-center justify-center">
           <Image
-            src="/images/sybohfrogtransparentbackground.png"
+            src="/images/sybohfrogtransparentbackgroundLOGO.png"
             alt="Syboh Solutions LLC"
             width={0}
             height={0}

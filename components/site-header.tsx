@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 font-medium">
           <Image
-            src="/images/sybohfrogtransparentbackground.png"
+            src="/images/sybohfrogtransparentbackgroundLOGO.png"
             alt="Syboh Solutions Logo"
             width={0}
             height={0}
