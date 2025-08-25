@@ -166,18 +166,31 @@ export async function POST(req: NextRequest) {
             _subject: subject 
           }),
         });
-        const ok = resp.ok;
-        if (ok) {
-          logger.contactForm(parsed.data as Record<string, unknown>, true);
+        
+        // Handle response parsing more robustly
+        const ctype = resp.headers.get("content-type") || "";
+        if (ctype.includes("application/json")) {
+          try { 
+            await resp.json(); 
+          } catch {}
         } else {
-          logger.contactForm(parsed.data as Record<string, unknown>, false, "Formspree request failed");
+          try { 
+            await resp.text(); 
+          } catch {}
         }
-        return NextResponse.json({ ok });
+
+        if (!resp.ok) {
+          logger.contactForm(parsed.data as Record<string, unknown>, false, "Formspree request failed");
+          return NextResponse.json({ ok: false, error: "Send failed" }, { status: 500 });
+        }
+        
+        logger.contactForm(parsed.data as Record<string, unknown>, true);
+        return NextResponse.json({ ok: true });
       } catch (formspreeError) {
         logger.error("Formspree request failed", { error: formspreeError }, 'contact-form');
         logger.contactForm(parsed.data as Record<string, unknown>, false, "Formspree request failed");
         return NextResponse.json(
-          { error: "Failed to send message" },
+          { ok: false, error: "Failed to send message" },
           { status: 500 }
         );
       }

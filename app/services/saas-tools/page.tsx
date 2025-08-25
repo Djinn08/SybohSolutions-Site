@@ -137,47 +137,46 @@ export default function SaasToolsPage() {
                        ))}
                      </div>
                      
-                     {/* Service-specific content */}
-                     {service.title === "SaaS Tools" ? (
-                       <>
-                         {/* SaaS Tools Image */}
-                         <div className="mb-8 flex justify-center">
-                           <Image
-                             src="/images/SaaSToolExample.jpg"
-                             alt="SaaS dashboard example"
-                             width={400}
-                             height={300}
-                             className="rounded-lg max-w-full h-auto"
-                             unoptimized
-                           />
-                         </div>
-                         
-                         {/* Latin filler examples */}
-                         <div className="bg-muted/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                           <h4 className="font-semibold mb-4 text-center">Example Features</h4>
-                           <div className="space-y-2 text-sm">
-                             <div className="flex items-center gap-2">
-                               <div className="w-2 h-2 rounded-full gradient-bg"></div>
-                               <span className="text-muted-foreground">Automatizare processus repetiti</span>
-                             </div>
-                             <div className="flex items-center gap-2">
-                               <div className="w-2 h-2 rounded-full gradient-bg"></div>
-                               <span className="text-muted-foreground">Dashboard visum clarum</span>
-                             </div>
-                             <div className="flex items-center gap-2">
-                               <div className="w-2 h-2 rounded-full gradient-bg"></div>
-                               <span className="text-muted-foreground">Data insight pro decisionibus</span>
-                             </div>
-                           </div>
-                         </div>
-                       </>
-                     ) : (
-                       <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                         <p className="text-muted-foreground text-sm italic">
-                           {service.placeholder}
-                         </p>
-                       </div>
-                     )}
+                                           {/* Service-specific content */}
+                      {service.title === "SaaS Tools" ? (
+                        <div className="flex flex-col items-center gap-6 min-h-[900px] md:min-h-[1000px]">
+                          {/* SaaS Tools Image */}
+                          <div className="mx-auto max-w-3xl pt-6">
+                            <Image
+                              src="/images/SaaSToolExample.jpg"
+                              alt="SaaS dashboard example"
+                              width={1200}
+                              height={800}
+                              className="w-full h-auto rounded-2xl shadow-lg"
+                            />
+                          </div>
+                          
+                          {/* Latin filler examples */}
+                          <div className="bg-muted/10 rounded-lg p-6 max-w-2xl mx-auto">
+                            <h4 className="font-semibold mb-4 text-center">Example Features</h4>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full gradient-bg"></div>
+                                <span className="text-muted-foreground">Automatizare processus repetiti</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full gradient-bg"></div>
+                                <span className="text-muted-foreground">Dashboard visum clarum</span>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full gradient-bg"></div>
+                                <span className="text-muted-foreground">Data insight pro decisionibus</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="bg-muted/20 rounded-lg p-6 max-w-2xl mx-auto">
+                          <p className="text-muted-foreground text-sm italic">
+                            {service.placeholder}
+                          </p>
+                        </div>
+                      )}
                      
                      {/* No CTA button on individual slides */}
                    </div>

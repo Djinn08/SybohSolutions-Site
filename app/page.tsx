@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="what-we-do" className="mt-16">
+      <section id="what-we-do" className="mt-16 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight gradient-text mb-6">What We Do</h2>
         <div className="grid gap-8 md:grid-cols-2">
           {[

@@ -74,6 +74,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Global CTA Update**: Changed all "Book a Consult" buttons site-wide to redirect to `/contact` form instead of Calendly for better user experience
 - **Homepage CTA Cleanup**: Removed redundant "Book a consult" button from hero section, keeping only navbar and bottom CTAs for cleaner UX
 - **Carousel Content Enhancement**: Added placeholder images and Latin filler content to all "What We Do" carousel slides for visual consistency and better user engagement
+- **Site v1.0.2 Update**: Comprehensive improvements including consistent carousel layouts, smooth scroll navigation, enhanced Tech Installs content, and robust contact form handling
+- **Image Path Standardization**: Updated all image references to use `/images/` paths and implemented consistent Next.js Image component usage across all service pages
+- **Carousel Layout Consistency**: Implemented fixed-height containers (`min-h-[900px] md:min-h-[1000px]`) for all carousel slides to prevent navigation drift
+- **Tech Installs Content Restoration**: Replaced Tech Installs slide with comprehensive structure including financing options, comparison table, and detailed service descriptions
+- **Smooth Scroll Navigation**: Added `scroll-behavior: smooth` to global CSS and implemented proper anchor linking for "What We Do" section
+- **Contact API Hardening**: Enhanced JSON parsing with content-type checking and improved error handling for Formspree integration
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

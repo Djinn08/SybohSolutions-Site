@@ -137,138 +137,76 @@ export default function TechInstallsPage() {
                        ))}
                      </div>
                      
-                     {/* Enhanced content for Tech Installs */}
-                     {service.title === "Tech Installs" ? (
-                       <div className="space-y-8 max-w-4xl mx-auto">
-                         {/* Tech Installs Image */}
-                         <div className="mb-8 flex justify-center">
-                           <Image
-                             src="/images/TechInstallImage.jpg"
-                             alt="Tech installation example"
-                             width={400}
-                             height={300}
-                             className="rounded-lg max-w-full h-auto"
-                             unoptimized
-                           />
-                         </div>
-                         
-                         {/* Latin filler introduction */}
-                         <div className="bg-muted/10 rounded-lg p-4 mb-6">
-                           <p className="text-muted-foreground text-sm italic text-center">
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                           </p>
-                         </div>
-                         
-                         {/* Financing Options */}
-                         <div className="grid gap-4 md:grid-cols-3">
-                           <div className="bg-muted/20 rounded-lg p-4 border border-muted">
-                             <h4 className="font-semibold mb-2">Straight Install</h4>
-                             <p className="text-sm text-muted-foreground mb-2">Pay once, own it outright. We handle install, setup, and handoff.</p>
-                             <p className="text-xs text-muted-foreground italic">Best for: teams with budget in hand and a clear timeline.</p>
-                           </div>
-                           <div className="bg-gradient-to-br from-accent-teal/20 to-accent-lime/20 rounded-lg p-4 border border-accent-teal/30 relative">
-                             <div className="absolute -top-2 -right-2 bg-gradient-to-r from-accent-teal to-accent-lime text-background text-xs px-2 py-1 rounded-full font-medium">
-                               Signature
-                             </div>
-                             <h4 className="font-semibold mb-2">Operator-First Financing</h4>
-                             <p className="text-sm text-muted-foreground mb-2">We install upfront. You pay it off through a fair revenue split.</p>
-                             <p className="text-xs text-muted-foreground italic">Best for: high-impact upgrades where you want ROI now, not later.</p>
-                             <div className="flex flex-wrap gap-1 mt-2">
-                               <span className="text-xs bg-background/50 px-2 py-1 rounded">No big upfront bill</span>
-                               <span className="text-xs bg-background/50 px-2 py-1 rounded">Fast start</span>
-                               <span className="text-xs bg-background/50 px-2 py-1 rounded">Training + maintenance</span>
-                             </div>
-                           </div>
-                           <div className="bg-muted/20 rounded-lg p-4 border border-muted">
-                             <h4 className="font-semibold mb-2">Maintenance-First</h4>
-                             <p className="text-sm text-muted-foreground mb-2">You buy/install, and we keep it humming with proactive support.</p>
-                             <p className="text-xs text-muted-foreground italic">Best for: teams who already purchased hardware and want reliable upkeep.</p>
-                           </div>
-                         </div>
+                                           {/* Enhanced content for Tech Installs */}
+                      {service.title === "Tech Installs" ? (
+                        <div className="flex flex-col items-center gap-6 min-h-[900px] md:min-h-[1000px]">
+                          <h2 className="text-4xl font-bold">Tech Installs</h2>
+                          <p className="text-xl text-muted-foreground">Tools that work on day one — without the big upfront bill.</p>
+                          <p className="max-w-3xl">Most vendors drop a giant invoice and disappear. We don&apos;t. We install the tech you need — self-pour walls, POS kiosks, displays — and offer flexible ways to pay so you can start seeing returns immediately.</p>
 
-                         {/* Comparison Table */}
-                         <div className="bg-muted/10 rounded-lg p-4">
-                           <h4 className="font-semibold mb-3 text-center">Plan Comparison</h4>
-                           <div className="grid gap-2 text-sm">
-                             <div className="grid grid-cols-4 gap-2 font-medium">
-                               <div></div>
-                               <div>Straight</div>
-                               <div>Operator-First</div>
-                               <div>Maintenance</div>
-                             </div>
-                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
-                               <div className="text-muted-foreground">Upfront cost</div>
-                               <div>High</div>
-                               <div>Low</div>
-                               <div>None (post-purchase)</div>
-                             </div>
-                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
-                               <div className="text-muted-foreground">Monthly/Rev share</div>
-                               <div>Optional retainer</div>
-                               <div>Revenue split until payoff</div>
-                               <div>Flat retainer</div>
-                             </div>
-                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
-                               <div className="text-muted-foreground">Ownership</div>
-                               <div>You</div>
-                               <div>Syboh until paid off</div>
-                               <div>You</div>
-                             </div>
-                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
-                               <div className="text-muted-foreground">Includes</div>
-                               <div>Install + training</div>
-                               <div>Install + training + maintenance</div>
-                               <div>Maintenance + training</div>
-                             </div>
-                           </div>
-                         </div>
+                          <ul className="text-left max-w-3xl space-y-3">
+                            <li>Straight Install: Pay once, own it outright with install and handoff</li>
+                            <li>Operator-First Financing: Install upfront, pay through revenue share</li>
+                            <li>Maintenance-First: You buy/install, we keep it humming with support</li>
+                            <li>End-to-end setup with operator training on all models</li>
+                          </ul>
 
-                         {/* FAQ Section */}
-                         <div className="space-y-3">
-                           <h4 className="font-semibold">Frequently Asked Questions</h4>
-                           <div className="space-y-2 text-sm">
-                             <details className="bg-muted/10 rounded p-3">
-                               <summary className="font-medium cursor-pointer">How does the split work?</summary>
-                               <p className="text-muted-foreground mt-2">Example terms: 50/50 until the system is paid off; then 20/80 ongoing with maintenance included. Exact numbers depend on your volume and agreement.</p>
-                             </details>
-                             <details className="bg-muted/10 rounded p-3">
-                               <summary className="font-medium cursor-pointer">Who owns the equipment?</summary>
-                               <p className="text-muted-foreground mt-2">For Operator-First, Syboh retains ownership until payoff. After payoff, ownership and the revenue split adjust per agreement.</p>
-                             </details>
-                             <details className="bg-muted/10 rounded p-3">
-                               <summary className="font-medium cursor-pointer">What if sales are slow?</summary>
-                               <p className="text-muted-foreground mt-2">We structure fair terms together. Example: a small monthly floor or longer payoff window, so both sides are protected.</p>
-                             </details>
-                             <details className="bg-muted/10 rounded p-3">
-                               <summary className="font-medium cursor-pointer">What do you install?</summary>
-                               <p className="text-muted-foreground mt-2">Self-pour walls, POS, kiosks, digital displays, and related peripherals—end-to-end setup with operator training.</p>
-                             </details>
-                           </div>
-                         </div>
-
-                                                   {/* Operator-First details link only */}
-                          <div className="flex justify-center">
-                            <Link
-                              href="/offers/operator-first-financing"
-                              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-                            >
-                              See Operator-First details
-                            </Link>
+                          <div className="mx-auto max-w-3xl pt-6">
+                            <Image 
+                              src="/images/TechInstallImage.jpg" 
+                              alt="Tech installation example" 
+                              width={1200} 
+                              height={800} 
+                              className="w-full h-auto rounded-2xl shadow-lg" 
+                            />
                           </div>
 
-                         {/* Disclaimers */}
-                         <div className="text-xs text-muted-foreground text-center space-y-1">
-                           <p>Example terms shown for illustration. Final terms depend on assessment and agreement.</p>
-                           <p>Operator-First availability subject to approval.</p>
-                         </div>
-                       </div>
-                     ) : (
-                       <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                         <p className="text-muted-foreground text-sm italic">
-                           {service.placeholder}
-                         </p>
-                       </div>
-                     )}
+                          <div className="grid md:grid-cols-3 gap-6 w-full max-w-5xl pt-8">
+                            <div className="rounded-2xl border p-6 text-left">
+                              <h3 className="font-semibold text-lg">Straight Install</h3>
+                              <p className="text-sm text-muted-foreground">Pay once, own it outright. We handle install, setup, and handoff.</p>
+                              <p className="mt-3 text-xs italic">Best for: teams with budget in hand and a clear timeline.</p>
+                            </div>
+                            <div className="rounded-2xl border p-6 text-left ring-1 ring-primary/30 bg-primary/5">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-semibold text-lg">Operator-First Financing</h3>
+                                <span className="text-xs bg-primary text-primary-foreground px-2 py-0.5 rounded-full">Signature</span>
+                              </div>
+                              <p className="text-sm text-muted-foreground">We install upfront. You pay it off through a fair revenue split, then keep the lion&apos;s share while we maintain it.</p>
+                              <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                                <span className="rounded-full border px-2 py-0.5">No big upfront bill</span>
+                                <span className="rounded-full border px-2 py-0.5">Fast start</span>
+                                <span className="rounded-full border px-2 py-0.5">Training + maintenance</span>
+                              </div>
+                            </div>
+                            <div className="rounded-2xl border p-6 text-left">
+                              <h3 className="font-semibold text-lg">Maintenance-First</h3>
+                              <p className="text-sm text-muted-foreground">You buy/install, and we keep it humming with proactive support.</p>
+                              <p className="mt-3 text-xs italic">Best for: teams who already purchased hardware and want reliable upkeep.</p>
+                            </div>
+                          </div>
+
+                          <div className="w-full max-w-5xl overflow-x-auto pt-6">
+                            <table className="w-full text-left text-sm">
+                              <thead className="text-muted-foreground">
+                                <tr><th></th><th>Straight</th><th>Operator-First</th><th>Maintenance</th></tr>
+                              </thead>
+                              <tbody className="divide-y divide-border/40">
+                                <tr><td>Upfront cost</td><td>High</td><td>Low</td><td>None (post-purchase)</td></tr>
+                                <tr><td>Monthly/Rev share</td><td>Optional retainer</td><td>Revenue split until payoff</td><td>Flat retainer</td></tr>
+                                <tr><td>Ownership</td><td>You</td><td>Syboh until paid off</td><td>You</td></tr>
+                                <tr><td>Includes</td><td>Install + training</td><td>Install + training + maintenance</td><td>Support + updates</td></tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="bg-muted/20 rounded-lg p-6 max-w-2xl mx-auto">
+                          <p className="text-muted-foreground text-sm italic">
+                            {service.placeholder}
+                          </p>
+                        </div>
+                      )}
                      
                                            {/* No CTA button on individual slides */}
                    </div>

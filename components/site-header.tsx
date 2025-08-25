@@ -25,6 +25,7 @@ export function SiteHeader() {
             <Link 
               key={l.href} 
               href={l.href} 
+              prefetch={l.href.startsWith('/#') ? false : undefined}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               onClick={l.href.startsWith('/#') ? (e) => {
                 e.preventDefault();

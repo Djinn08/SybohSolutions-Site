@@ -137,43 +137,42 @@ export default function OperationsPage() {
                        ))}
                      </div>
                      
-                     {/* Service-specific content */}
-                     {service.title === "Operations" ? (
-                       <>
-                         {/* Operations Image */}
-                         <div className="mb-8 flex justify-center">
-                           <Image
-                             src="/images/POSStockImageRoyaltyFree.jpg"
-                             alt="Operations workflow example"
-                             width={400}
-                             height={300}
-                             className="rounded-lg max-w-full h-auto"
-                             unoptimized
-                           />
-                         </div>
-                         
-                         {/* Before & After Workflow Table */}
-                         <div className="bg-muted/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                           <h4 className="font-semibold mb-4 text-center">Before & After Workflow</h4>
-                           <div className="grid grid-cols-2 gap-4 text-sm">
-                             <div className="bg-muted/20 rounded p-4">
-                               <h5 className="font-medium mb-2 text-red-400">Before</h5>
-                               <p className="text-muted-foreground">Lorem ipsum dolor sit amet</p>
-                             </div>
-                             <div className="bg-muted/20 rounded p-4">
-                               <h5 className="font-medium mb-2 text-green-400">After</h5>
-                               <p className="text-muted-foreground">Consectetur adipiscing elit</p>
-                             </div>
-                           </div>
-                         </div>
-                       </>
-                     ) : (
-                       <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                         <p className="text-muted-foreground text-sm italic">
-                           {service.placeholder}
-                         </p>
-                       </div>
-                     )}
+                                           {/* Service-specific content */}
+                      {service.title === "Operations" ? (
+                        <div className="flex flex-col items-center gap-6 min-h-[900px] md:min-h-[1000px]">
+                          {/* Operations Image */}
+                          <div className="mx-auto max-w-3xl pt-6">
+                            <Image
+                              src="/images/POSStockImageRoyaltyFree.jpg"
+                              alt="POS in action"
+                              width={1200}
+                              height={800}
+                              className="w-full h-auto rounded-2xl shadow-lg"
+                            />
+                          </div>
+                          
+                          {/* Before & After Workflow Table */}
+                          <div className="bg-muted/10 rounded-lg p-6 max-w-2xl mx-auto">
+                            <h4 className="font-semibold mb-4 text-center">Before & After Workflow</h4>
+                            <div className="grid grid-cols-2 gap-4 text-sm">
+                              <div className="bg-muted/20 rounded p-4">
+                                <h5 className="font-medium mb-2 text-red-400">Before</h5>
+                                <p className="text-muted-foreground">Lorem ipsum dolor sit amet</p>
+                              </div>
+                              <div className="bg-muted/20 rounded p-4">
+                                <h5 className="font-medium mb-2 text-green-400">After</h5>
+                                <p className="text-muted-foreground">Consectetur adipiscing elit</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="bg-muted/20 rounded-lg p-6 max-w-2xl mx-auto">
+                          <p className="text-muted-foreground text-sm italic">
+                            {service.placeholder}
+                          </p>
+                        </div>
+                      )}
                      
                      {/* No CTA button on individual slides */}
                    </div>
