@@ -14,7 +14,7 @@ export function CtaBanner({
   title = COMPANY.tagline,
   subtitle = "Design. Install. Train. Scale.",
   ctaLabel = "Book a consult",
-  href = COMPANY.calendlyUrl,
+  href = "/contact",
 }: CtaBannerProps) {
   return (
     <section className="my-16 rounded-xl border border-muted bg-muted/20 p-6 backdrop-blur">

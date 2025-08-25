@@ -25,16 +25,6 @@ export default function Home() {
           Design. Install. Train. Scale. We help operators deploy high-ROI systems
           that pay back fast.
         </p>
-        <div className="mt-6 flex justify-center">
-          <Link
-            href={COMPANY.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-          >
-            Book a consult
-          </Link>
-        </div>
         
         {/* Scroll indicator */}
         <div className="mt-12 flex justify-center">

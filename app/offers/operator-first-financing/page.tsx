@@ -58,14 +58,12 @@ export default function OperatorFirstFinancingPage() {
       </div>
 
       <div className="text-center">
-        <Link
-          href={COMPANY.calendlyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-        >
-          Book a Consult
-        </Link>
+                        <Link
+                  href="/contact"
+                  className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
+                >
+                  Book a Consult
+                </Link>
       </div>
     </main>
   );
