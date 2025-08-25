@@ -64,6 +64,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Service Page Content**: Enhanced with expanded explanations, key bullet points, and case study placeholders for each service
 - **Build Fixes**: Fixed ESLint errors for unused variables and unescaped apostrophes in service pages
 - **Static Generation Fix**: Converted SiteHeader to client component to resolve event handler error during build
+- **Navigation & UX Improvements**: Added smooth scrolling to layout, removed secondary CTA from hero, updated carousel autoplay to 12s with hover pause
+- **Contact Form Enhancement**: Improved JSON response handling and error management, updated to use CONTACT_TO environment variable
+- **Tech Installs Enhancement**: Added Operator-First Financing as key differentiator with three financing options, comparison table, FAQ section, and dedicated financing page
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

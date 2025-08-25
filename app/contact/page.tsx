@@ -47,6 +47,13 @@ export default function ContactPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      
+      // Check content type before parsing JSON
+      const contentType = res.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error("Server returned non-JSON response");
+      }
+      
       const data = await res.json();
       
       if (!res.ok) {
@@ -54,7 +61,7 @@ export default function ContactPage() {
       }
       
       if (!data.ok) {
-        throw new Error("Failed to send message");
+        throw new Error(data.error || "Failed to send message");
       }
       
       setStatus("success");

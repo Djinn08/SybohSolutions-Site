@@ -27,15 +27,18 @@ const processSteps = [
 
 export default function ProcessPage() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-advance carousel
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       setCurrentStep((prev) => (prev + 1) % processSteps.length);
-    }, 5000); // Change every 5 seconds
+    }, 12000); // Change every 12 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const nextStep = () => {
     setCurrentStep((prev) => (prev + 1) % processSteps.length);
@@ -67,12 +70,16 @@ export default function ProcessPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
         
         <div className="relative w-full max-w-6xl mx-auto px-6">
-          {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-2xl">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentStep * 100}%)` }}
-            >
+                        {/* Carousel Container */}
+              <div 
+                className="relative overflow-hidden rounded-2xl"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentStep * 100}%)` }}
+                >
                              {processSteps.map((step) => (
                 <div 
                   key={step.step}

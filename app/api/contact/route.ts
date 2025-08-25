@@ -137,7 +137,7 @@ export async function POST(req: NextRequest) {
         const resend = new Resend(resendKey);
         await resend.emails.send({
           from: COMPANY.emails.from,
-          to: "info@sybohsolutions.com", // Direct to info@sybohsolutions.com
+          to: COMPANY.emails.info, // Use CONTACT_TO environment variable
           subject,
           html,
         });

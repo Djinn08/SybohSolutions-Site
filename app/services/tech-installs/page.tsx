@@ -19,13 +19,13 @@ const services = [
   },
   {
     title: "Tech Installs",
-    headline: "Tools that work on day one.",
-    expanded: "From POS to kiosks, displays, and hardware, we handle end-to-end setup to ensure your technology integrates seamlessly into daily operations. No guesswork, no downtime — just smooth installs with training included.",
+    headline: "Tools that work on day one — without the big upfront bill.",
+    expanded: "Most vendors drop a giant invoice and disappear. We don't. We install the tech you need—self-pour walls, POS kiosks, displays—and offer flexible ways to pay so you can start seeing returns immediately.",
     bullets: [
-      "Full installation of POS, kiosks, and displays",
-      "Hardware configuration and system integration",
-      "On-site and remote operator training",
-      "Reliable support to keep systems running"
+      "Straight Install: Pay once, own it outright with install and handoff",
+      "Operator-First Financing: Install upfront, pay through revenue share",
+      "Maintenance-First: You buy/install, we keep it humming with support",
+      "End-to-end setup with operator training on all models"
     ],
     placeholder: "Proof Point Coming Soon — Example install or operator feedback."
   },
@@ -57,15 +57,18 @@ const services = [
 
 export default function TechInstallsPage() {
   const [currentService, setCurrentService] = useState(1); // Start on Tech Installs
+  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-advance carousel
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       setCurrentService((prev) => (prev + 1) % services.length);
-    }, 4000); // Change every 4 seconds
+    }, 12000); // Change every 12 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const nextService = () => {
     setCurrentService((prev) => (prev + 1) % services.length);
@@ -98,7 +101,11 @@ export default function TechInstallsPage() {
         
         <div className="relative w-full max-w-6xl mx-auto px-6">
           {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-2xl">
+          <div 
+            className="relative overflow-hidden rounded-2xl"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentService * 100}%)` }}
@@ -129,22 +136,139 @@ export default function TechInstallsPage() {
                        ))}
                      </div>
                      
-                     {/* Placeholder for Case Study/Proof */}
-                     <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                       <p className="text-muted-foreground text-sm italic">
-                         {service.placeholder}
-                       </p>
-                     </div>
+                     {/* Enhanced content for Tech Installs */}
+                     {service.title === "Tech Installs" ? (
+                       <div className="space-y-8 max-w-4xl mx-auto">
+                         {/* Financing Options */}
+                         <div className="grid gap-4 md:grid-cols-3">
+                           <div className="bg-muted/20 rounded-lg p-4 border border-muted">
+                             <h4 className="font-semibold mb-2">Straight Install</h4>
+                             <p className="text-sm text-muted-foreground mb-2">Pay once, own it outright. We handle install, setup, and handoff.</p>
+                             <p className="text-xs text-muted-foreground italic">Best for: teams with budget in hand and a clear timeline.</p>
+                           </div>
+                           <div className="bg-gradient-to-br from-accent-teal/20 to-accent-lime/20 rounded-lg p-4 border border-accent-teal/30 relative">
+                             <div className="absolute -top-2 -right-2 bg-gradient-to-r from-accent-teal to-accent-lime text-background text-xs px-2 py-1 rounded-full font-medium">
+                               Signature
+                             </div>
+                             <h4 className="font-semibold mb-2">Operator-First Financing</h4>
+                             <p className="text-sm text-muted-foreground mb-2">We install upfront. You pay it off through a fair revenue split.</p>
+                             <p className="text-xs text-muted-foreground italic">Best for: high-impact upgrades where you want ROI now, not later.</p>
+                             <div className="flex flex-wrap gap-1 mt-2">
+                               <span className="text-xs bg-background/50 px-2 py-1 rounded">No big upfront bill</span>
+                               <span className="text-xs bg-background/50 px-2 py-1 rounded">Fast start</span>
+                               <span className="text-xs bg-background/50 px-2 py-1 rounded">Training + maintenance</span>
+                             </div>
+                           </div>
+                           <div className="bg-muted/20 rounded-lg p-4 border border-muted">
+                             <h4 className="font-semibold mb-2">Maintenance-First</h4>
+                             <p className="text-sm text-muted-foreground mb-2">You buy/install, and we keep it humming with proactive support.</p>
+                             <p className="text-xs text-muted-foreground italic">Best for: teams who already purchased hardware and want reliable upkeep.</p>
+                           </div>
+                         </div>
+
+                         {/* Comparison Table */}
+                         <div className="bg-muted/10 rounded-lg p-4">
+                           <h4 className="font-semibold mb-3 text-center">Plan Comparison</h4>
+                           <div className="grid gap-2 text-sm">
+                             <div className="grid grid-cols-4 gap-2 font-medium">
+                               <div></div>
+                               <div>Straight</div>
+                               <div>Operator-First</div>
+                               <div>Maintenance</div>
+                             </div>
+                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
+                               <div className="text-muted-foreground">Upfront cost</div>
+                               <div>High</div>
+                               <div>Low</div>
+                               <div>None (post-purchase)</div>
+                             </div>
+                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
+                               <div className="text-muted-foreground">Monthly/Rev share</div>
+                               <div>Optional retainer</div>
+                               <div>Revenue split until payoff</div>
+                               <div>Flat retainer</div>
+                             </div>
+                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
+                               <div className="text-muted-foreground">Ownership</div>
+                               <div>You</div>
+                               <div>Syboh until paid off</div>
+                               <div>You</div>
+                             </div>
+                             <div className="grid grid-cols-4 gap-2 border-t border-muted pt-2">
+                               <div className="text-muted-foreground">Includes</div>
+                               <div>Install + training</div>
+                               <div>Install + training + maintenance</div>
+                               <div>Maintenance + training</div>
+                             </div>
+                           </div>
+                         </div>
+
+                         {/* FAQ Section */}
+                         <div className="space-y-3">
+                           <h4 className="font-semibold">Frequently Asked Questions</h4>
+                           <div className="space-y-2 text-sm">
+                             <details className="bg-muted/10 rounded p-3">
+                               <summary className="font-medium cursor-pointer">How does the split work?</summary>
+                               <p className="text-muted-foreground mt-2">Example terms: 50/50 until the system is paid off; then 20/80 ongoing with maintenance included. Exact numbers depend on your volume and agreement.</p>
+                             </details>
+                             <details className="bg-muted/10 rounded p-3">
+                               <summary className="font-medium cursor-pointer">Who owns the equipment?</summary>
+                               <p className="text-muted-foreground mt-2">For Operator-First, Syboh retains ownership until payoff. After payoff, ownership and the revenue split adjust per agreement.</p>
+                             </details>
+                             <details className="bg-muted/10 rounded p-3">
+                               <summary className="font-medium cursor-pointer">What if sales are slow?</summary>
+                               <p className="text-muted-foreground mt-2">We structure fair terms together. Example: a small monthly floor or longer payoff window, so both sides are protected.</p>
+                             </details>
+                             <details className="bg-muted/10 rounded p-3">
+                               <summary className="font-medium cursor-pointer">What do you install?</summary>
+                               <p className="text-muted-foreground mt-2">Self-pour walls, POS, kiosks, digital displays, and related peripherals—end-to-end setup with operator training.</p>
+                             </details>
+                           </div>
+                         </div>
+
+                         {/* CTA Row */}
+                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                           <Link
+                             href={COMPANY.calendlyUrl}
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
+                           >
+                             Book a Consult
+                           </Link>
+                           <Link
+                             href="/offers/operator-first-financing"
+                             className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+                           >
+                             See Operator-First details
+                           </Link>
+                         </div>
+
+                         {/* Disclaimers */}
+                         <div className="text-xs text-muted-foreground text-center space-y-1">
+                           <p>Example terms shown for illustration. Final terms depend on assessment and agreement.</p>
+                           <p>Operator-First availability subject to approval.</p>
+                         </div>
+                       </div>
+                     ) : (
+                       <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+                         <p className="text-muted-foreground text-sm italic">
+                           {service.placeholder}
+                         </p>
+                       </div>
+                     )}
                      
-                     {/* CTA Button */}
-                     <Link
-                       href={COMPANY.calendlyUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-                     >
-                       Book a Consult
-                     </Link>
+                     {/* CTA Button - only show for non-Tech Installs slides */}
+                     {service.title !== "Tech Installs" && (
+                       <Link
+                         href={COMPANY.calendlyUrl}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
+                       >
+                         Book a Consult
+                       </Link>
+                     )}
                    </div>
                  </div>
                ))}

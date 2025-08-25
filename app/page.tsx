@@ -25,7 +25,7 @@ export default function Home() {
           Design. Install. Train. Scale. We help operators deploy high-ROI systems
           that pay back fast.
         </p>
-        <div className="mt-6 flex justify-center gap-4">
+        <div className="mt-6 flex justify-center">
           <Link
             href={COMPANY.calendlyUrl}
             target="_blank"
@@ -33,12 +33,6 @@ export default function Home() {
             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
           >
             Book a consult
-          </Link>
-          <Link
-            href="/services"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-muted px-8 hover:bg-muted transition-colors"
-          >
-            Explore services
           </Link>
         </div>
         

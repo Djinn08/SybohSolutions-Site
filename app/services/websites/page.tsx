@@ -57,15 +57,18 @@ const services = [
 
 export default function WebsitesPage() {
   const [currentService, setCurrentService] = useState(3); // Start on Websites
+  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-advance carousel
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       setCurrentService((prev) => (prev + 1) % services.length);
-    }, 4000); // Change every 4 seconds
+    }, 12000); // Change every 12 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const nextService = () => {
     setCurrentService((prev) => (prev + 1) % services.length);
@@ -98,7 +101,11 @@ export default function WebsitesPage() {
         
         <div className="relative w-full max-w-6xl mx-auto px-6">
           {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-2xl">
+          <div 
+            className="relative overflow-hidden rounded-2xl"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentService * 100}%)` }}
