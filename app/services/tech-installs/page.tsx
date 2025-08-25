@@ -226,23 +226,15 @@ export default function TechInstallsPage() {
                            </div>
                          </div>
 
-                         {/* CTA Row */}
-                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                           <Link
-                             href={COMPANY.calendlyUrl}
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-                           >
-                             Book a Consult
-                           </Link>
-                           <Link
-                             href="/offers/operator-first-financing"
-                             className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-                           >
-                             See Operator-First details
-                           </Link>
-                         </div>
+                                                   {/* Operator-First details link only */}
+                          <div className="flex justify-center">
+                            <Link
+                              href="/offers/operator-first-financing"
+                              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+                            >
+                              See Operator-First details
+                            </Link>
+                          </div>
 
                          {/* Disclaimers */}
                          <div className="text-xs text-muted-foreground text-center space-y-1">
@@ -258,17 +250,7 @@ export default function TechInstallsPage() {
                        </div>
                      )}
                      
-                     {/* CTA Button - only show for non-Tech Installs slides */}
-                     {service.title !== "Tech Installs" && (
-                       <Link
-                         href={COMPANY.calendlyUrl}
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-                       >
-                         Book a Consult
-                       </Link>
-                     )}
+                                           {/* No CTA button on individual slides */}
                    </div>
                  </div>
                ))}
@@ -314,19 +296,17 @@ export default function TechInstallsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+            {/* CTA Section */}
       <section className="text-center py-16 px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
-            Ready to install reliable tech?
+            Need more in-depth information?
           </h2>
-                     <p className="text-muted-foreground mb-8">
-             Let&apos;s discuss how we can set up tools that work from day one.
-           </p>
+          <p className="text-muted-foreground mb-8">
+            Let&apos;s talk about how Syboh Solutions can help your operation.
+          </p>
           <Link
-            href={COMPANY.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
           >
             Book a Consult

@@ -143,15 +143,7 @@ export default function OperationsPage() {
                        </p>
                      </div>
                      
-                     {/* CTA Button */}
-                     <Link
-                       href={COMPANY.calendlyUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
-                     >
-                       Book a Consult
-                     </Link>
+                     {/* No CTA button on individual slides */}
                    </div>
                  </div>
                ))}
@@ -201,15 +193,13 @@ export default function OperationsPage() {
       <section className="text-center py-16 px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
-            Ready to optimize your operations?
+            Need more in-depth information?
           </h2>
-                     <p className="text-muted-foreground mb-8">
-             Let&apos;s discuss how we can streamline your workflows and boost your profits.
-           </p>
+          <p className="text-muted-foreground mb-8">
+            Let&apos;s talk about how Syboh Solutions can help your operation.
+          </p>
           <Link
-            href={COMPANY.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
           >
             Book a Consult

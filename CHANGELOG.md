@@ -68,6 +68,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Contact Form Enhancement**: Improved JSON response handling and error management, updated to use CONTACT_TO environment variable
 - **Tech Installs Enhancement**: Added Operator-First Financing as key differentiator with three financing options, comparison table, FAQ section, and dedicated financing page
 - **Navigation Fix**: Fixed "What We Do" navbar button to work from all pages by navigating to homepage then scrolling to section
+- **Carousel UX Update**: Removed individual "Book a Consult" buttons from carousel slides, added consistent static CTA section below all service carousels
+- **CTA Link Update**: Changed all carousel page CTAs to link to `/contact` instead of Calendly for better user flow
+- **Process Page Cleanup**: Removed "Learn More" buttons from Our Process carousel slides, updated CTA section with process-specific messaging
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

@@ -106,10 +106,7 @@ export default function ProcessPage() {
                       {step.blurb}
                     </p>
                     
-                    {/* Placeholder Button */}
-                    <button className="inline-flex h-12 items-center justify-center rounded-md border border-muted px-6 hover:bg-muted transition-colors">
-                      Learn More
-                    </button>
+                    {/* No CTA button on individual slides */}
                   </div>
                 </div>
               ))}
@@ -159,15 +156,13 @@ export default function ProcessPage() {
       <section className="text-center py-16 px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
-            Ready to get started?
+            Want to know how our process could benefit you?
           </h2>
-                     <p className="text-muted-foreground mb-8">
-             Let&apos;s discuss how our process can work for your business.
-           </p>
+          <p className="text-muted-foreground mb-8">
+            Let&apos;s discuss how we can streamline your workflows and boost your profits.
+          </p>
           <Link
-            href={COMPANY.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
           >
             Book a Consult
