@@ -63,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Content Updates**: Updated service descriptions with more compelling, benefit-focused copy
 - **Service Page Content**: Enhanced with expanded explanations, key bullet points, and case study placeholders for each service
 - **Build Fixes**: Fixed ESLint errors for unused variables and unescaped apostrophes in service pages
+- **Static Generation Fix**: Converted SiteHeader to client component to resolve event handler error during build
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type
