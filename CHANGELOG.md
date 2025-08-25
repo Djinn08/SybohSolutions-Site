@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **What We Do Section**: Updated to 2x2 grid with subsections: Operations, Operator Tech Installs, SaaS Tools, Websites/Retainers/Optimization
 - **Our Process Section**: Changed to 3-step process: Assess, Install/Train, Optimize
 - **Logo Updates**: Replaced hero image and site header logo with sybohfrogtransparentbackgroundLOGO.png
+- **Hero Section Layout**: Improved visual hierarchy with smaller logo, larger tagline, bigger buttons, and scroll indicator
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

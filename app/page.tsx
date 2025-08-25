@@ -6,14 +6,14 @@ import { CtaBanner } from "@/components/ui/cta-banner";
 export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
-      <section className="text-center">
-        <div className="mb-8 flex flex-col items-center justify-center">
+      <section className="text-center relative">
+        <div className="mb-6 flex flex-col items-center justify-center">
           <Image
             src="/images/sybohfrogtransparentbackgroundLOGO.png"
             alt="Syboh Solutions LLC"
             width={0}
             height={0}
-            className="h-auto w-full max-w-md md:max-w-lg"
+            className="h-auto w-full max-w-sm md:max-w-md"
             priority
             unoptimized
           />
@@ -21,25 +21,44 @@ export default function Home() {
             Syboh Solutions
           </h1>
         </div>
-        <p className="text-balance text-muted-foreground mx-auto mt-4 max-w-2xl">
+        <p className="text-balance text-2xl font-medium mx-auto mt-6 max-w-3xl leading-relaxed">
           Design. Install. Train. Scale. We help operators deploy high-ROI systems
           that pay back fast.
         </p>
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-6 flex justify-center gap-4">
           <Link
             href={COMPANY.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center justify-center rounded-md gradient-bg px-6 text-background font-medium transition-all hover:opacity-90"
+            className="inline-flex h-12 items-center justify-center rounded-md gradient-bg px-8 text-background font-medium transition-all hover:opacity-90"
           >
             Book a consult
           </Link>
           <Link
             href="/services"
-            className="inline-flex h-11 items-center justify-center rounded-md border border-muted px-6 hover:bg-muted transition-colors"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-muted px-8 hover:bg-muted transition-colors"
           >
             Explore services
           </Link>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="mt-12 flex justify-center">
+          <div className="animate-bounce">
+            <svg 
+              className="w-6 h-6 text-muted-foreground" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+              />
+            </svg>
+          </div>
         </div>
       </section>
 
