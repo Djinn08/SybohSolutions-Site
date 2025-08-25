@@ -5,7 +5,7 @@ interface LogEntry {
   timestamp: string;
   level: 'info' | 'error' | 'warn';
   message: string;
-  details?: any;
+  details?: Record<string, unknown>;
   source?: string;
 }
 
@@ -39,7 +39,7 @@ class Logger {
     }
   }
 
-  info(message: string, details?: any, source?: string) {
+  info(message: string, details?: Record<string, unknown>, source?: string) {
     const entry: LogEntry = {
       timestamp: new Date().toISOString(),
       level: 'info',
@@ -50,7 +50,7 @@ class Logger {
     this.writeLog(entry);
   }
 
-  error(message: string, details?: any, source?: string) {
+  error(message: string, details?: Record<string, unknown>, source?: string) {
     const entry: LogEntry = {
       timestamp: new Date().toISOString(),
       level: 'error',
@@ -61,7 +61,7 @@ class Logger {
     this.writeLog(entry, true);
   }
 
-  warn(message: string, details?: any, source?: string) {
+  warn(message: string, details?: Record<string, unknown>, source?: string) {
     const entry: LogEntry = {
       timestamp: new Date().toISOString(),
       level: 'warn',
@@ -73,7 +73,7 @@ class Logger {
   }
 
   // Special method for contact form submissions
-  contactForm(data: any, success: boolean, error?: string) {
+  contactForm(data: Record<string, unknown>, success: boolean, error?: string) {
     const entry: LogEntry = {
       timestamp: new Date().toISOString(),
       level: success ? 'info' : 'error',

@@ -141,11 +141,11 @@ export async function POST(req: NextRequest) {
           subject,
           html,
         });
-        logger.contactForm(parsed.data, true);
+        logger.contactForm(parsed.data as Record<string, unknown>, true);
         return NextResponse.json({ ok: true });
       } catch (emailError) {
         logger.error("Email sending failed", { error: emailError }, 'contact-form');
-        logger.contactForm(parsed.data, false, "Email sending failed");
+        logger.contactForm(parsed.data as Record<string, unknown>, false, "Email sending failed");
         return NextResponse.json(
           { error: "Failed to send email" },
           { status: 500 }
@@ -168,14 +168,14 @@ export async function POST(req: NextRequest) {
         });
         const ok = resp.ok;
         if (ok) {
-          logger.contactForm(parsed.data, true);
+          logger.contactForm(parsed.data as Record<string, unknown>, true);
         } else {
-          logger.contactForm(parsed.data, false, "Formspree request failed");
+          logger.contactForm(parsed.data as Record<string, unknown>, false, "Formspree request failed");
         }
         return NextResponse.json({ ok });
       } catch (formspreeError) {
         logger.error("Formspree request failed", { error: formspreeError }, 'contact-form');
-        logger.contactForm(parsed.data, false, "Formspree request failed");
+        logger.contactForm(parsed.data as Record<string, unknown>, false, "Formspree request failed");
         return NextResponse.json(
           { error: "Failed to send message" },
           { status: 500 }
@@ -187,7 +187,7 @@ export async function POST(req: NextRequest) {
       resendKey: !!resendKey, 
       formspreeUrl: !!formspreeUrl 
     }, 'contact-form');
-    logger.contactForm(parsed.data, false, "No email provider configured");
+    logger.contactForm(parsed.data as Record<string, unknown>, false, "No email provider configured");
     return NextResponse.json(
       { error: "No email provider configured" },
       { status: 500 }
