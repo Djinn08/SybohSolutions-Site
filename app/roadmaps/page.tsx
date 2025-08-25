@@ -7,27 +7,22 @@ export default function RoadmapsPage() {
       </p>
 
       <section className="mt-8">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Listen",
-              desc: "We start by understanding your unique challenges, goals, and constraints. This helps us propose solutions that actually work for your business.",
-              icon: "👂"
+              title: "Assess",
+              desc: "We map goals, constraints, and ROI drivers to understand your unique needs and challenges.",
+              icon: "📊"
             },
             {
-              title: "Plan",
-              desc: "Based on what we learn, we create a clear roadmap with specific deliverables, timelines, and success metrics.",
-              icon: "📋"
+              title: "Install/Train",
+              desc: "Deploy systems and upskill your team with hands-on training and support.",
+              icon: "🔧"
             },
             {
-              title: "Build",
-              desc: "We deliver the project or tool, keeping you updated throughout the process and making adjustments as needed.",
-              icon: "🔨"
-            },
-            {
-              title: "Support",
-              desc: "We don't just walk away. We provide ongoing support, maintenance, and optimization to ensure continued success.",
-              icon: "🛠️"
+              title: "Optimize",
+              desc: "Iterate to drive cash-flow and retention through continuous improvement and optimization.",
+              icon: "📈"
             },
           ].map((step, i) => (
             <div key={step.title} className="rounded-xl border border-muted p-6">

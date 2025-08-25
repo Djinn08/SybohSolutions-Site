@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sample `content/home.json` with structured content data
 - Subtle linen texture background for enhanced visual appeal
 - New favicon using SybohWeblogo.png for better brand recognition
+- Local logging system (`lib/logger.ts`) for automatic log generation
+- Enhanced contact form validation with real-time error feedback
+- Improved success/error messaging for contact form submissions
 
 ### Changed
 - Updated logo placement: smaller transparent frog logo in header, larger transparent logo in hero section
@@ -41,6 +44,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Process Section**: Replaced jargon-heavy content with simple 4-step process (Listen, Plan, Build, Support)
 - **Visual Design**: Added subtle linen texture background for enhanced visual appeal
 - **Favicon**: Updated to use SybohWeblogo.png for better brand recognition
+- **Homepage Hero**: Added "Syboh Solutions" text with gradient styling, centered with frog logo
+- **Contact Form**: Wired to info@sybohsolutions.com with enhanced validation and error handling
+- **What We Do Section**: Updated to 2x2 grid with subsections: Operations, Operator Tech Installs, SaaS Tools, Websites/Retainers/Optimization
+- **Our Process Section**: Changed to 3-step process: Assess, Install/Train, Optimize
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

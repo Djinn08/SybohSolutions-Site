@@ -10,23 +10,23 @@
     "subtitle": "Comprehensive solutions for modern operations",
     "items": [
       {
-        "title": "Operations Optimization",
-        "description": "Streamline systems and improve efficiency",
+        "title": "Operations",
+        "description": "Streamline systems and improve efficiency across your business operations",
         "link": "/services"
       },
       {
-        "title": "On-Site Tech Installations",
-        "description": "Set up POS, kiosks, displays, and hardware",
+        "title": "Operator Tech Installs",
+        "description": "Set up POS, kiosks, displays, and hardware solutions",
         "link": "/services/operator-tech-installs"
       },
       {
-        "title": "SaaS Tools & Digital Products",
-        "description": "Showcase in-house tools and digital solutions",
+        "title": "SaaS Tools",
+        "description": "Showcase in-house tools and digital solutions for business automation",
         "link": "/services"
       },
       {
-        "title": "Websites & Ongoing Support",
-        "description": "Creation, optimization, retainers, and updates",
+        "title": "Websites, Retainers & Optimization",
+        "description": "Creation, optimization, retainers, and ongoing updates for your digital presence",
         "link": "/services/site-creation"
       }
     ]
@@ -36,20 +36,16 @@
     "subtitle": "A simple, proven approach to delivering results",
     "steps": [
       {
-        "title": "Listen",
-        "description": "Understand your goals"
+        "title": "Assess",
+        "description": "We map goals, constraints, and ROI drivers"
       },
       {
-        "title": "Plan",
-        "description": "Propose clear solutions"
+        "title": "Install/Train",
+        "description": "Deploy systems and upskill your team"
       },
       {
-        "title": "Build",
-        "description": "Deliver the project or tool"
-      },
-      {
-        "title": "Support",
-        "description": "Keep everything running smoothly"
+        "title": "Optimize",
+        "description": "Iterate to drive cash-flow and retention"
       }
     ]
   },

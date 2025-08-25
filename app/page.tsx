@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <section className="text-center">
-        <div className="mb-8 flex justify-center">
+        <div className="mb-8 flex flex-col items-center justify-center">
           <Image
             src="/images/sybohfrogtransparentbackground.png"
             alt="Syboh Solutions LLC"
@@ -17,15 +17,10 @@ export default function Home() {
             priority
             unoptimized
           />
+          <h1 className="text-balance text-4xl font-semibold tracking-tight gradient-text md:text-6xl mt-4">
+            Syboh Solutions
+          </h1>
         </div>
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-muted px-3 py-1 text-xs text-muted-foreground">
-          <span>Operator-first</span>
-          <span className="text-foreground">•</span>
-          <span>Real-world ROI</span>
-        </p>
-        <h1 className="text-balance text-4xl font-semibold tracking-tight md:text-6xl">
-          {COMPANY.tagline}
-        </h1>
         <p className="text-balance text-muted-foreground mx-auto mt-4 max-w-2xl">
           Design. Install. Train. Scale. We help operators deploy high-ROI systems
           that pay back fast.
@@ -50,26 +45,26 @@ export default function Home() {
 
       <section className="mt-16">
         <h2 className="text-2xl font-semibold tracking-tight gradient-text mb-6">What We Do</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2">
           {[
             {
-              title: "Operations Optimization",
-              desc: "Streamline systems and improve efficiency.",
+              title: "Operations",
+              desc: "Streamline systems and improve efficiency across your business operations.",
               href: "/services",
             },
             {
-              title: "On-Site Tech Installations",
-              desc: "Set up POS, kiosks, displays, and hardware.",
+              title: "Operator Tech Installs",
+              desc: "Set up POS, kiosks, displays, and hardware solutions.",
               href: "/services/operator-tech-installs",
             },
             {
-              title: "SaaS Tools & Digital Products",
-              desc: "Showcase in-house tools and digital solutions.",
+              title: "SaaS Tools",
+              desc: "Showcase in-house tools and digital solutions for business automation.",
               href: "/services",
             },
             {
-              title: "Websites & Ongoing Support",
-              desc: "Creation, optimization, retainers, and updates.",
+              title: "Websites, Retainers & Optimization",
+              desc: "Creation, optimization, retainers, and ongoing updates for your digital presence.",
               href: "/services/site-creation",
             },
           ].map((s) => (
@@ -87,14 +82,13 @@ export default function Home() {
 
       <section className="mt-16">
         <h2 className="text-2xl font-semibold tracking-tight gradient-text mb-6">Our Process</h2>
-        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "Listen", desc: "Understand your goals." },
-            { title: "Plan", desc: "Propose clear solutions." },
-            { title: "Build", desc: "Deliver the project or tool." },
-            { title: "Support", desc: "Keep everything running smoothly." },
+            { title: "Assess", desc: "We map goals, constraints, and ROI drivers." },
+            { title: "Install/Train", desc: "Deploy systems and upskill your team." },
+            { title: "Optimize", desc: "Iterate to drive cash-flow and retention." },
           ].map((step, i) => (
-            <li key={step.title} className="rounded-xl border border-muted p-5">
+            <li key={step.title} className="rounded-xl border border-muted p-6">
               <div className="text-sm text-muted-foreground">Step {i + 1}</div>
               <div className="mt-2 text-lg font-medium">{step.title}</div>
               <p className="text-muted-foreground mt-1 text-sm">{step.desc}</p>

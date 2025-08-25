@@ -2,10 +2,10 @@ import Link from "next/link";
 import { FEATURES } from "@/lib/constants";
 
 const services = [
-  { title: "Operations Optimization", href: "/services", desc: "Streamline systems and improve efficiency across your business operations." },
-  { title: "On-Site Tech Installations", href: "/services/operator-tech-installs", desc: "Set up POS, kiosks, displays, and hardware solutions." },
-  { title: "SaaS Tools & Digital Products", href: "/services", desc: "Showcase in-house tools and digital solutions for business automation." },
-  { title: "Websites & Ongoing Support", href: "/services/site-creation", desc: "Creation, optimization, retainers, and updates for your digital presence." },
+  { title: "Operations", href: "/services", desc: "Streamline systems and improve efficiency across your business operations." },
+  { title: "Operator Tech Installs", href: "/services/operator-tech-installs", desc: "Set up POS, kiosks, displays, and hardware solutions." },
+  { title: "SaaS Tools", href: "/services", desc: "Showcase in-house tools and digital solutions for business automation." },
+  { title: "Websites, Retainers & Optimization", href: "/services/site-creation", desc: "Creation, optimization, retainers, and ongoing updates for your digital presence." },
   ...(FEATURES.showBohBar ? [{ title: "BohBar", href: "/services/bohbar", desc: "Concept page: Coming soon." }] : []),
 ];
 

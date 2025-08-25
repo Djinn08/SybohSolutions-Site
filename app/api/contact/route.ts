@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { COMPANY } from "@/lib/constants";
 import { Resend } from "resend";
+import { logger } from "@/lib/logger";
 
 // Enhanced schema with stricter validation
 const schema = z.object({
@@ -55,6 +56,9 @@ function sanitizeInput(input: string): string {
 export async function POST(req: NextRequest) {
   // Check rate limit
   if (!checkContactRateLimit(req)) {
+    logger.warn("Contact form rate limit exceeded", { 
+      ip: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown' 
+    }, 'contact-form');
     return NextResponse.json(
       { error: "Too many contact form submissions. Please try again later." },
       { status: 429 }
@@ -84,6 +88,10 @@ export async function POST(req: NextRequest) {
     // Validate and sanitize input
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
+      logger.error("Contact form validation failed", { 
+        errors: parsed.error.issues,
+        data: { name: data.name, email: data.email, company: data.company, messageLength: data.message?.length }
+      }, 'contact-form');
       return NextResponse.json(
         { error: "Invalid input", details: parsed.error.issues },
         { status: 400 }
@@ -125,37 +133,67 @@ export async function POST(req: NextRequest) {
     const formspreeUrl = process.env.FORMSPREE_URL || "";
 
     if (resendKey) {
-      const resend = new Resend(resendKey);
-      await resend.emails.send({
-        from: COMPANY.emails.from,
-        to: COMPANY.emails.info,
-        subject,
-        html,
-      });
-      return NextResponse.json({ ok: true });
+      try {
+        const resend = new Resend(resendKey);
+        await resend.emails.send({
+          from: COMPANY.emails.from,
+          to: "info@sybohsolutions.com", // Direct to info@sybohsolutions.com
+          subject,
+          html,
+        });
+        logger.contactForm(parsed.data, true);
+        return NextResponse.json({ ok: true });
+      } catch (emailError) {
+        logger.error("Email sending failed", { error: emailError }, 'contact-form');
+        logger.contactForm(parsed.data, false, "Email sending failed");
+        return NextResponse.json(
+          { error: "Failed to send email" },
+          { status: 500 }
+        );
+      }
     }
 
     if (formspreeUrl) {
-      const resp = await fetch(formspreeUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          name: sanitizedName, 
-          email: sanitizedEmail, 
-          company: sanitizedCompany, 
-          message: sanitizedMessage, 
-          _subject: subject 
-        }),
-      });
-      const ok = resp.ok;
-      return NextResponse.json({ ok });
+      try {
+        const resp = await fetch(formspreeUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            name: sanitizedName, 
+            email: sanitizedEmail, 
+            company: sanitizedCompany, 
+            message: sanitizedMessage, 
+            _subject: subject 
+          }),
+        });
+        const ok = resp.ok;
+        if (ok) {
+          logger.contactForm(parsed.data, true);
+        } else {
+          logger.contactForm(parsed.data, false, "Formspree request failed");
+        }
+        return NextResponse.json({ ok });
+      } catch (formspreeError) {
+        logger.error("Formspree request failed", { error: formspreeError }, 'contact-form');
+        logger.contactForm(parsed.data, false, "Formspree request failed");
+        return NextResponse.json(
+          { error: "Failed to send message" },
+          { status: 500 }
+        );
+      }
     }
 
+    logger.error("No email provider configured", { 
+      resendKey: !!resendKey, 
+      formspreeUrl: !!formspreeUrl 
+    }, 'contact-form');
+    logger.contactForm(parsed.data, false, "No email provider configured");
     return NextResponse.json(
       { error: "No email provider configured" },
       { status: 500 }
     );
-  } catch {
+  } catch (error) {
+    logger.error("Contact form server error", { error }, 'contact-form');
     return NextResponse.json(
       { error: "Server error" },
       { status: 500 }
