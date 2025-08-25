@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY } from "@/lib/constants";
 
 const services = [
@@ -139,6 +140,25 @@ export default function TechInstallsPage() {
                      {/* Enhanced content for Tech Installs */}
                      {service.title === "Tech Installs" ? (
                        <div className="space-y-8 max-w-4xl mx-auto">
+                         {/* Tech Installs Image */}
+                         <div className="mb-8 flex justify-center">
+                           <Image
+                             src="/images/TechInstallImage.jpg"
+                             alt="Tech installation example"
+                             width={400}
+                             height={300}
+                             className="rounded-lg max-w-full h-auto"
+                             unoptimized
+                           />
+                         </div>
+                         
+                         {/* Latin filler introduction */}
+                         <div className="bg-muted/10 rounded-lg p-4 mb-6">
+                           <p className="text-muted-foreground text-sm italic text-center">
+                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                           </p>
+                         </div>
+                         
                          {/* Financing Options */}
                          <div className="grid gap-4 md:grid-cols-3">
                            <div className="bg-muted/20 rounded-lg p-4 border border-muted">

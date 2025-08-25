@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY } from "@/lib/constants";
 
 const services = [
@@ -136,12 +137,47 @@ export default function WebsitesPage() {
                        ))}
                      </div>
                      
-                     {/* Placeholder for Case Study/Proof */}
-                     <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-                       <p className="text-muted-foreground text-sm italic">
-                         {service.placeholder}
-                       </p>
-                     </div>
+                     {/* Service-specific content */}
+                     {service.title === "Websites & Optimization" ? (
+                       <>
+                         {/* Websites Image */}
+                         <div className="mb-8 flex justify-center">
+                           <Image
+                             src="/images/WebsiteOptimizationImage.jpg"
+                             alt="Website optimization example"
+                             width={400}
+                             height={300}
+                             className="rounded-lg max-w-full h-auto"
+                             unoptimized
+                           />
+                         </div>
+                         
+                         {/* Common problems list */}
+                         <div className="bg-muted/10 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+                           <h4 className="font-semibold mb-4 text-center">Common Problems We Solve</h4>
+                           <div className="space-y-2 text-sm">
+                             <div className="flex items-center gap-2">
+                               <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                               <span className="text-muted-foreground">Site celeritas lenta</span>
+                             </div>
+                             <div className="flex items-center gap-2">
+                               <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                               <span className="text-muted-foreground">Design antiquus</span>
+                             </div>
+                             <div className="flex items-center gap-2">
+                               <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                               <span className="text-muted-foreground">SEO carens</span>
+                             </div>
+                           </div>
+                         </div>
+                       </>
+                     ) : (
+                       <div className="bg-muted/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+                         <p className="text-muted-foreground text-sm italic">
+                           {service.placeholder}
+                         </p>
+                       </div>
+                     )}
                      
                      {/* No CTA button on individual slides */}
                    </div>

@@ -73,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Process Page Cleanup**: Removed "Learn More" buttons from Our Process carousel slides, updated CTA section with process-specific messaging
 - **Global CTA Update**: Changed all "Book a Consult" buttons site-wide to redirect to `/contact` form instead of Calendly for better user experience
 - **Homepage CTA Cleanup**: Removed redundant "Book a consult" button from hero section, keeping only navbar and bottom CTAs for cleaner UX
+- **Carousel Content Enhancement**: Added placeholder images and Latin filler content to all "What We Do" carousel slides for visual consistency and better user engagement
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type
