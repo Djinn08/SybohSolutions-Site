@@ -86,6 +86,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Homepage Website Focus**: Completely restructured homepage to focus exclusively on websites with new hero, plans teaser, why us, and CTA sections
 - **Homepage Sections**: New hero with "Websites that grow with your business" headline, 3-column plans teaser row, "Why Syboh?" section with 4 benefit icons, and simplified CTA
 - **Navigation Simplification**: Removed "What We Do" and "Our Process" links, changed "Pricing" to "Plans", streamlined to focus on website services
+- **Complete Site Restructure**: Updated navigation to Home, Plans, Add-Ons, Work, About, Contact with active state indicators
+- **New Pages**: Created Contact page with Google Form iframe, Add-Ons page with 3 service cards, Work page with project showcase
+- **ResponsiveIframe Component**: Created reusable iframe wrapper for embedded forms and content
+- **Pricing Page Enhancement**: Fixed heading typography, added comprehensive FAQ section with 6 common questions, improved section order
+- **Footer Redesign**: Updated with mini sitemap, contact info, social icons, and improved styling
+- **Typography Fix**: Fixed "g" descender cutoff in pricing page heading with proper line-height and padding
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

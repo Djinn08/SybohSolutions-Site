@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
   return (
     <header className="border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -21,27 +24,22 @@ export function SiteHeader() {
           <span className="text-lg font-semibold gradient-text">{COMPANY.shortName}</span>
         </Link>
         <nav className="hidden gap-6 md:flex">
-          {NAV_LINKS.map((l) => (
-            <Link 
-              key={l.href} 
-              href={l.href} 
-              prefetch={l.href.startsWith('/#') ? false : undefined}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              onClick={l.href.startsWith('/#') ? (e) => {
-                e.preventDefault();
-                const element = document.querySelector(l.href.substring(1));
-                if (element) {
-                  // Element exists on current page, scroll to it
-                  element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  // Element doesn't exist, navigate to homepage then scroll
-                  window.location.href = l.href;
-                }
-              } : undefined}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((l) => {
+            const isActive = pathname === l.href;
+            return (
+              <Link 
+                key={l.href} 
+                href={l.href} 
+                className={`text-sm transition-colors ${
+                  isActive 
+                    ? "text-foreground" 
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
         </nav>
         <Link
           href="/contact"

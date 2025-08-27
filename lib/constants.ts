@@ -19,7 +19,10 @@ export const FEATURES = {
 };
 
 export const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/pricing", label: "Plans" },
+  { href: "/add-ons", label: "Add-Ons" },
+  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
