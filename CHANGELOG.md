@@ -107,6 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **TypeScript Errors**: Fixed `any` types in API routes, unused variables, and unused imports
 - **ESLint Warnings**: Removed unused imports and variables across multiple files
+- **TypeScript Fix**: Corrected `createTransporter` to `createTransport` in contact API route
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

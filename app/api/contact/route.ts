@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Create transporter
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 465,
       secure: true, // Use SSL for port 465

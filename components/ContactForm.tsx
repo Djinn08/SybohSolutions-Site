@@ -6,6 +6,7 @@ type Props = {
 };
 
 export default function ContactForm({ variant }: Props) {
+  // variant is used for future functionality
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState<null | boolean>(null);
 
