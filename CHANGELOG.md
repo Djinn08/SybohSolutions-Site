@@ -80,6 +80,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tech Installs Content Restoration**: Replaced Tech Installs slide with comprehensive structure including financing options, comparison table, and detailed service descriptions
 - **Smooth Scroll Navigation**: Added `scroll-behavior: smooth` to global CSS and implemented proper anchor linking for "What We Do" section
 - **Contact API Hardening**: Enhanced JSON parsing with content-type checking and improved error handling for Formspree integration
+- **Pricing Section Integration**: Added comprehensive pricing component with care plans and website builds, integrated into homepage and dedicated pricing page
+- **Pricing Features**: Interactive pricing cards with expandable feature lists, tabbed interface for Care Plans vs Website Builds, and responsive design
+- **Navigation Updates**: Added "Pricing" link to main navigation and "Pricing" buttons to service cards on homepage
+- **Homepage Website Focus**: Completely restructured homepage to focus exclusively on websites with new hero, plans teaser, why us, and CTA sections
+- **Homepage Sections**: New hero with "Websites that grow with your business" headline, 3-column plans teaser row, "Why Syboh?" section with 4 benefit icons, and simplified CTA
+- **Navigation Simplification**: Removed "What We Do" and "Our Process" links, changed "Pricing" to "Plans", streamlined to focus on website services
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

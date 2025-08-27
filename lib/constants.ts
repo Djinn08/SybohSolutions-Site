@@ -19,8 +19,7 @@ export const FEATURES = {
 };
 
 export const NAV_LINKS = [
-  { href: "/#what-we-do", label: "What We Do" },
-  { href: "/process", label: "Our Process" },
+  { href: "/pricing", label: "Plans" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
