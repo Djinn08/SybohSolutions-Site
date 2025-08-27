@@ -123,7 +123,7 @@ export default function ContactPage() {
           {error && (
             <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-4">
               <p className="text-red-400 font-medium">Failed to send message</p>
-              <p className="text-red-300 text-sm mt-1">{error}</p>
+              <p className="text-red-300 text-sm mt-1">Please try again or email us directly at info@sybohsolutions.com</p>
             </div>
           )}
         </form>

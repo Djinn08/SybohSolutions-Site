@@ -108,6 +108,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **TypeScript Errors**: Fixed `any` types in API routes, unused variables, and unused imports
 - **ESLint Warnings**: Removed unused imports and variables across multiple files
 - **TypeScript Fix**: Corrected `createTransporter` to `createTransport` in contact API route
+- **Start Project Page**: Replaced Google Form embed with clean CTA button linking to external form
+- **Contact Form**: Fixed double error message display issue
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type
