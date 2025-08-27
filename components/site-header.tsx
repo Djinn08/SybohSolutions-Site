@@ -42,7 +42,7 @@ export function SiteHeader() {
           })}
         </nav>
         <Link
-          href="/contact"
+          href="/start-project"
           className="ml-6 inline-flex h-9 items-center justify-center rounded-md gradient-bg px-4 text-background font-medium transition-all hover:opacity-90"
         >
           Book a consult

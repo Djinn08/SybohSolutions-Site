@@ -8,14 +8,14 @@ export function SiteFooter() {
           <div className="text-center md:text-left">
             <p>© {new Date().getFullYear()} Syboh Solutions LLC · Made in Lincoln, NE</p>
             <p className="mt-1">info@sybohsolutions.com</p>
+            <p className="mt-2 text-xs text-white/50">All plans include managed hosting and security. See Plans for details.</p>
           </div>
           
           <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <Link href="/pricing" className="hover:text-white transition-colors">Plans</Link>
-            <Link href="/add-ons" className="hover:text-white transition-colors">Add-Ons</Link>
+            <Link href="/start-project" className="hover:text-white transition-colors">Start a Project</Link>
             <Link href="/work" className="hover:text-white transition-colors">Work</Link>
-            <Link href="/about" className="hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/legal/terms" className="hover:text-white transition-colors">Terms</Link>

@@ -23,11 +23,11 @@ const nextConfig: NextConfig = {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },
-          // Frame Options
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
+          // Frame Options - Removed DENY to allow Google Forms embedding
+          // {
+          //   key: "X-Frame-Options",
+          //   value: "DENY",
+          // },
           // Referrer Policy
           {
             key: "Referrer-Policy",
@@ -56,12 +56,13 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy-Report-Only",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: https: blob:",
-              "connect-src 'self' https://api.vercel.com https://vitals.vercel-insights.com",
-              "frame-src 'none'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.google.com https://docs.google.com https://forms.gle",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.google.com https://docs.google.com https://forms.gle",
+              "font-src 'self' https://fonts.gstatic.com https://www.google.com https://docs.google.com https://forms.gle",
+              "img-src 'self' data: https: blob: https://www.google.com https://docs.google.com https://forms.gle",
+              "connect-src 'self' https://api.vercel.com https://vitals.vercel-insights.com https://www.google.com https://docs.google.com https://forms.gle",
+              "frame-src 'self' https://docs.google.com https://www.google.com https://forms.gle",
+              "child-src 'self' https://docs.google.com https://www.google.com https://forms.gle",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

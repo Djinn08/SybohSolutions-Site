@@ -55,7 +55,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/pricing#essential"
+              href="/start-project"
               className="inline-flex w-full items-center justify-center rounded-lg border border-muted px-4 py-2 text-sm font-medium hover:bg-muted/20 transition-colors"
             >
               View Full Plan
@@ -84,7 +84,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/pricing#growth"
+              href="/start-project"
               className="inline-flex w-full items-center justify-center rounded-lg gradient-bg px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-all"
             >
               View Full Plan
@@ -110,7 +110,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/pricing#premium"
+              href="/start-project"
               className="inline-flex w-full items-center justify-center rounded-lg border border-muted px-4 py-2 text-sm font-medium hover:bg-muted/20 transition-colors"
             >
               View Full Plan
@@ -180,7 +180,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold gradient-text mb-4">Ready to start?</h2>
           <Link
-            href="/contact"
+            href="/start-project"
             className="inline-flex h-14 items-center justify-center rounded-md gradient-bg px-8 text-background font-semibold text-lg transition-all hover:opacity-90"
           >
             Start a Project

@@ -23,7 +23,7 @@ const carePlans: Plan[] = [
     period: "/mo",
     tagline: "Keep the lights on: hosting, security, core updates.",
     ctaLabel: "Choose Essential",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "Managed hosting + SSL" },
       { label: "Weekly backups & uptime monitoring" },
@@ -40,7 +40,7 @@ const carePlans: Plan[] = [
     tagline: "Optimization & momentum. Most teams start here.",
     popular: true,
     ctaLabel: "Choose Growth",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "Everything in Essential" },
       { label: "Up to 4 update requests / month" },
@@ -56,7 +56,7 @@ const carePlans: Plan[] = [
     period: "/mo",
     tagline: "Your outsourced web & growth team.",
     ctaLabel: "Choose Premium",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "Everything in Growth" },
       { label: "Unlimited small updates (no rebuilds)" },
@@ -75,7 +75,7 @@ const builds: Plan[] = [
     price: "$1,099",
     tagline: "Single-page, fast launch, mobile-first.",
     ctaLabel: "Start Starter",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "One-page responsive website" },
       { label: "Contact form + basic analytics" },
@@ -90,7 +90,7 @@ const builds: Plan[] = [
     popular: true,
     tagline: "Multi-page site built to convert.",
     ctaLabel: "Start Business",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "4–8 pages (Home, Services, About, Contact, etc.)" },
       { label: "Lead forms + calendaring/booking support" },
@@ -104,7 +104,7 @@ const builds: Plan[] = [
     price: "Custom",
     tagline: "Advanced features, integrations, or headless.",
     ctaLabel: "Request a Quote",
-    ctaHref: "/contact",
+    ctaHref: "/start-project",
     features: [
       { label: "Complex IA & custom components" },
       { label: "Integrations (POS, CRM, automations)" },

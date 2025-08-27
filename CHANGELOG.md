@@ -92,6 +92,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Pricing Page Enhancement**: Fixed heading typography, added comprehensive FAQ section with 6 common questions, improved section order
 - **Footer Redesign**: Updated with mini sitemap, contact info, social icons, and improved styling
 - **Typography Fix**: Fixed "g" descender cutoff in pricing page heading with proper line-height and padding
+- **Native Forms Implementation**: Replaced Google Form embed with custom ContactForm component using Nodemailer + SMTP
+- **Form System**: Created /contact (general) and /start-project (website intake) pages with honeypot spam protection
+- **Email Integration**: Added SMTP mailer API route with proper error handling and email templating
+- **CTA Updates**: Updated all "Start a Project" buttons to link to /start-project instead of /contact
+- **Dependencies**: Added nodemailer and @types/nodemailer for email functionality
+- **Contact API Route**: Created dedicated `/api/contact` route with proper validation, email formatting, and error handling
+- **Start Project Page**: Created new page with Google Form embed and responsive iframe wrapper
+- **Security Headers**: Updated CSP to allow Google Forms embedding, removed X-Frame-Options DENY
+- **Contact Page Redesign**: Replaced ContactForm component with simple form and toast notifications
+- **Navigation Updates**: Added "Start a Project" to main navigation, removed "About" link
+- **Footer Enhancement**: Added disclaimer about managed hosting and security, updated quick links
 
 ### Fixed
 - Build errors related to `req.ip` property not existing on NextRequest type

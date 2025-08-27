@@ -80,7 +80,7 @@ export default function WorkPage() {
             <h3 className="text-xl font-semibold mb-2">No projects yet</h3>
             <p className="text-muted-foreground mb-6">We&apos;re working on our first projects. Check back soon!</p>
             <Link
-              href="/contact"
+              href="/start-project"
               className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all"
             >
               Start Your Project

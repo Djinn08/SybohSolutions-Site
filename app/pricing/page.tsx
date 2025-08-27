@@ -7,7 +7,7 @@ export default function PricingPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="text-center py-16 md:py-20 px-6">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight gradient-text mb-4">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] tracking-tight gradient-text mb-4">
           Pricing & Plans
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -121,7 +121,7 @@ export default function PricingPage() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold gradient-text mb-4">Ready to start?</h2>
           <Link
-            href="/contact"
+            href="/start-project"
             className="inline-flex h-14 items-center justify-center rounded-md gradient-bg px-8 text-background font-semibold text-lg transition-all hover:opacity-90"
           >
             Start a Project
