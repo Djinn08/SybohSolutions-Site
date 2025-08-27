@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMPANY } from "@/lib/constants";
+
 
 export default function OperatorFirstFinancingPage() {
   return (

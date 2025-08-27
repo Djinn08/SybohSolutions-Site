@@ -97,13 +97,15 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Contact form error:", error);
+    
+    const errorMessage = error instanceof Error ? error.message : "Failed to send contact form submission";
     
     return NextResponse.json(
       { 
         success: false, 
-        error: error.message || "Failed to send contact form submission" 
+        error: errorMessage
       },
       { status: 500 }
     );

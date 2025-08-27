@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { COMPANY } from "@/lib/constants";
-import { CtaBanner } from "@/components/ui/cta-banner";
+
 
 export default function Home() {
   return (
