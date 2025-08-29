@@ -1,12 +1,7 @@
 "use client";
 import { useState } from "react";
 
-type Props = {
-  variant?: "contact" | "project";
-};
-
-export default function ContactForm({ variant }: Props) {
-  // variant is used for future functionality
+export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState<null | boolean>(null);
 
@@ -86,7 +81,7 @@ export default function ContactForm({ variant }: Props) {
 
       {ok === true && (
         <div className="rounded-lg bg-emerald-900/50 border border-emerald-500/20 p-4">
-          <p className="text-emerald-400">Message sent successfully! We'll get back to you within one business day.</p>
+          <p className="text-emerald-400">Message sent successfully! We&apos;ll get back to you within one business day.</p>
         </div>
       )}
       {ok === false && (

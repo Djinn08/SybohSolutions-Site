@@ -12,7 +12,7 @@ export default function AboutPage() {
       <header className="space-y-3">
         <h1 className="text-4xl font-serif">About Syboh</h1>
         <p className="text-lg text-neutral-600">
-          Operator-first web + tech, based in Lincoln, NE. We're two brothers building straightforward websites
+          Operator-first web + tech, based in Lincoln, NE. We&apos;re two brothers building straightforward websites
           and practical tech for small businesses. Our goal is simple: make your tools work, keep them maintained,
           and be easy to reach when you need help.
         </p>
@@ -23,8 +23,8 @@ export default function AboutPage() {
         <h2 className="text-2xl font-serif">What we do</h2>
         <ul className="list-disc pl-5 space-y-1 text-neutral-700">
           <li><strong>Websites & Care</strong> — clean builds, working intake/contact, basic SEO, and month-to-month maintenance.</li>
-          <li><strong>Tech help</strong> — installs/config, basic automations, and training so your team can actually use what's set up.</li>
-          <li><strong>Operations support</strong> — checklists, simple workflows, and light analytics so you can see what's working.</li>
+          <li><strong>Tech help</strong> — installs/config, basic automations, and training so your team can actually use what&apos;s set up.</li>
+          <li><strong>Operations support</strong> — checklists, simple workflows, and light analytics so you can see what&apos;s working.</li>
         </ul>
       </section>
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
 
       {/* Who you'll work with */}
       <section className="space-y-3">
-        <h2 className="text-2xl font-serif">Who you'll work with</h2>
+        <h2 className="text-2xl font-serif">Who you&apos;ll work with</h2>
         <ul className="space-y-2 text-neutral-700">
           <li><strong>Connor</strong> — Design, Client Comms, Sales, Operations, Training, Installations & Business Solutions.</li>
           <li><strong>Brendan</strong> — SaaS, Web Development, Custom Builds, Integrations, and Technical Solutions.</li>
