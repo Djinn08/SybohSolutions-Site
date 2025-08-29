@@ -60,7 +60,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/start-project"
+              href="/pricing"
               className="inline-flex w-full items-center justify-center rounded-lg border border-muted px-4 py-2 text-sm font-medium hover:bg-muted/20 transition-colors"
             >
               View Full Plan
@@ -89,7 +89,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/start-project"
+              href="/pricing"
               className="inline-flex w-full items-center justify-center rounded-lg gradient-bg px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-all"
             >
               View Full Plan
@@ -115,7 +115,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href="/start-project"
+              href="/pricing"
               className="inline-flex w-full items-center justify-center rounded-lg border border-muted px-4 py-2 text-sm font-medium hover:bg-muted/20 transition-colors"
             >
               View Full Plan

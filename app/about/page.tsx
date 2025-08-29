@@ -46,9 +46,9 @@ export default function AboutPage() {
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold gradient-text">Why Syboh</h2>
           <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-            <li>Local & responsive — Lincoln, NE roots; we actually show up.</li>
-            <li>Predictable pricing — clear scope and month-to-month care.</li>
-            <li>Practical, not flashy — we ship what you need and document it.</li>
+            <li><strong className="text-foreground">Local & responsive</strong> — TESTTESTTEST Lincoln, NE roots; we actually show up.</li>
+            <li><strong className="text-foreground">Predictable pricing</strong> — clear scope and month-to-month care.</li>
+            <li><strong className="text-foreground">Practical, not flashy</strong> — we ship what you need and document it.</li>
           </ul>
         </div>
 

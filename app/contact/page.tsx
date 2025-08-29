@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,12 +34,14 @@ export default function ContactPage() {
 
       if (data.success) {
         setSuccess(true);
-        e.currentTarget.reset();
+        formRef.current?.reset();
       } else {
         setError(data.error || "Something went wrong");
+        formRef.current?.reset();
       }
     } catch {
       setError("Failed to send message. Please try again.");
+      formRef.current?.reset();
     } finally {
       setLoading(false);
     }
@@ -58,7 +61,7 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="mx-auto max-w-2xl px-6 pb-16">
-        <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-white/10 bg-neutral-900/50 p-8">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-white/10 bg-neutral-900/50 p-8">
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label className="mb-2 block text-sm font-medium text-white/70">Name *</label>
