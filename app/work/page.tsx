@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Client Projects | Syboh Solutions Portfolio Lincoln, NE",
+  description: "Explore projects built by Syboh Solutions — websites, installs, and technical solutions for small businesses in Lincoln, NE.",
+};
 
 export default function WorkPage() {
   const projects = [

@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Syboh Solutions | Web & Tech Support in Lincoln, NE",
+  description: "Meet the brothers behind Syboh Solutions in Lincoln, NE. Practical web, SaaS, and tech help built for small business operators.",
+};
+
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16 space-y-10 text-neutral-800">

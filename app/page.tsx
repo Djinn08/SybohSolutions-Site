@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Syboh Solutions | Websites, Tech Installs & Ops in Lincoln, NE",
+  description: "Operator-first solutions for small businesses in Lincoln, NE. Websites, SaaS, tech installs, and ongoing support.",
+};
 
 
 export default function Home() {

@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Add-On Services | Tech Installs, SaaS Tools, Operations",
+  description: "Expand your business capabilities with add-ons: SaaS tools, tech installs, operations support, and more.",
+};
 
 export default function AddOnsPage() {
   return (

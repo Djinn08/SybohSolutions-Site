@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Start a Project with Syboh Solutions | Lincoln, NE",
+  description: "Ready to upgrade your business tech or website? Start your project with Syboh Solutions. Practical, local, and operator-first.",
+};
 
 export default function StartProjectPage() {
   return (

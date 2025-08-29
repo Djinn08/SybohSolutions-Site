@@ -1,6 +1,12 @@
 import Link from "next/link";
 import PricingSection from "@/components/PricingSection";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Website Care & Support Plans | Syboh Solutions Lincoln, NE",
+  description: "Choose the right monthly care plan for your website. Secure hosting, updates, SEO, and support — tailored for small businesses in Lincoln, NE.",
+};
 
 export default function PricingPage() {
   return (
