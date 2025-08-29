@@ -3,51 +3,54 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
-  const [ok, setOk] = useState<null | boolean>(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(null);
+
+    const form = e.currentTarget as HTMLFormElement;
+    const fd = new FormData(form);
+
+    const payload = {
+      name: fd.get("name") as string,
+      email: fd.get("email") as string,
+      phone: fd.get("phone") as string,
+      company: fd.get("company") as string,
+      message: fd.get("message") as string,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      
+      if (data.success) {
+        setSuccess(true);
+        form.reset();
+      } else {
+        setError(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setError("Failed to send message. Please try again or email us directly at info@sybohsolutions.com");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <form
-      onSubmit={async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setOk(null);
-
-        const form = e.currentTarget as HTMLFormElement;
-        const fd = new FormData(form);
-
-        const payload = {
-          name: fd.get("name") as string,
-          email: fd.get("email") as string,
-          phone: fd.get("phone") as string,
-          company: fd.get("company") as string,
-          message: fd.get("message") as string,
-        };
-
-        try {
-          const res = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-
-          const data = await res.json();
-          
-          if (data.success) {
-            setOk(true);
-            form.reset();
-          } else {
-            setOk(false);
-          }
-        } catch (error) {
-          console.error("Form submission error:", error);
-          setOk(false);
-        } finally {
-          setLoading(false);
-        }
-      }}
+      onSubmit={handleSubmit}
       className="mx-auto w-full max-w-2xl space-y-4 rounded-2xl border border-white/10 bg-neutral-900/50 p-6"
     >
-
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm text-white/70">Name</label>
@@ -79,14 +82,15 @@ export default function ContactForm() {
         {loading ? "Sending..." : "Send message"}
       </button>
 
-      {ok === true && (
+      {success && (
         <div className="rounded-lg bg-emerald-900/50 border border-emerald-500/20 p-4">
           <p className="text-emerald-400">Message sent successfully! We&apos;ll get back to you within one business day.</p>
         </div>
       )}
-      {ok === false && (
+      
+      {error && (
         <div className="rounded-lg bg-red-900/50 border border-red-500/20 p-4">
-          <p className="text-red-400">Failed to send message. Please try again or email us directly at info@sybohsolutions.com</p>
+          <p className="text-red-400">{error}</p>
         </div>
       )}
     </form>
