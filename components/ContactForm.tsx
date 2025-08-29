@@ -14,7 +14,8 @@ export default function ContactForm({ variant }: Props) {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        setLoading(true); setOk(null);
+        setLoading(true);
+        setOk(null);
 
         const form = e.currentTarget as HTMLFormElement;
         const fd = new FormData(form);
@@ -27,16 +28,27 @@ export default function ContactForm({ variant }: Props) {
           message: fd.get("message") as string,
         };
 
-        const res = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
 
-        const data = await res.json();
-        setOk(data.success);
-        setLoading(false);
-        if (data.success) form.reset();
+          const data = await res.json();
+          
+          if (data.success) {
+            setOk(true);
+            form.reset();
+          } else {
+            setOk(false);
+          }
+        } catch (error) {
+          console.error("Form submission error:", error);
+          setOk(false);
+        } finally {
+          setLoading(false);
+        }
       }}
       className="mx-auto w-full max-w-2xl space-y-4 rounded-2xl border border-white/10 bg-neutral-900/50 p-6"
     >
@@ -72,8 +84,16 @@ export default function ContactForm({ variant }: Props) {
         {loading ? "Sending..." : "Send message"}
       </button>
 
-      {ok === true && <p className="text-emerald-400">Thanks! We&apos;ll get back to you within 1 business day.</p>}
-      {ok === false && <p className="text-rose-400">Something went wrong. Please email info@sybohsolutions.com.</p>}
+      {ok === true && (
+        <div className="rounded-lg bg-emerald-900/50 border border-emerald-500/20 p-4">
+          <p className="text-emerald-400">Message sent successfully! We'll get back to you within one business day.</p>
+        </div>
+      )}
+      {ok === false && (
+        <div className="rounded-lg bg-red-900/50 border border-red-500/20 p-4">
+          <p className="text-red-400">Failed to send message. Please try again or email us directly at info@sybohsolutions.com</p>
+        </div>
+      )}
     </form>
   );
 }
