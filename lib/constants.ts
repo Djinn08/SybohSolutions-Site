@@ -20,6 +20,7 @@ export const FEATURES = {
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/pricing", label: "Plans" },
   { href: "/start-project", label: "Start a Project" },
   { href: "/add-ons", label: "Add-Ons" },
