@@ -41,7 +41,7 @@ function getSecurityHeaders() {
     'X-XSS-Protection': '1; mode=block',
     'X-Download-Options': 'noopen',
     'X-Permitted-Cross-Domain-Policies': 'none',
-    'X-Robots-Tag': 'noindex, nofollow',
+    'X-Robots-Tag': 'index, follow',
   };
 }
 
