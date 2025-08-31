@@ -71,22 +71,63 @@ export function middleware(request: NextRequest) {
 
   // Block suspicious requests
   const userAgent = request.headers.get('user-agent') || '';
-  const suspiciousPatterns = [
-    /bot/i,
-    /crawler/i,
-    /spider/i,
-    /scraper/i,
-    /curl/i,
-    /wget/i,
+  
+  // List of legitimate search engine bots to always allow
+  const legitimateBots = [
+    'googlebot',
+    'bingbot',
+    'slurp',
+    'duckduckbot',
+    'baiduspider',
+    'yandexbot',
+    'facebookexternalhit',
+    'twitterbot',
+    'linkedinbot',
+    'whatsapp',
+    'telegrambot',
+    'discordbot',
+    'slackbot',
+    'applebot',
+    'semrushbot',
+    'ahrefsbot',
+    'mj12bot',
+    'dotbot',
+    'rogerbot',
+    'seznambot',
+    'coccocbot',
+    'ia_archiver',
+    'archive.org_bot',
+    'ia_archiver-web.archive.org',
   ];
 
-  // Allow legitimate bots but block suspicious ones
-  const isSuspiciousBot = suspiciousPatterns.some(pattern => 
-    pattern.test(userAgent) && !userAgent.includes('googlebot') && !userAgent.includes('bingbot')
+  // Check if it's a legitimate bot
+  const isLegitimateBot = legitimateBots.some(bot => 
+    userAgent.toLowerCase().includes(bot.toLowerCase())
   );
 
-  if (isSuspiciousBot) {
-    return new NextResponse('Forbidden', { status: 403 });
+  // Only block suspicious bots if they're not legitimate
+  if (!isLegitimateBot) {
+    const suspiciousPatterns = [
+      /bot.*scraper/i,
+      /bot.*harvester/i,
+      /bot.*spam/i,
+      /bot.*crawler.*spam/i,
+      /curl.*bot/i,
+      /wget.*bot/i,
+      /python.*requests/i,
+      /python.*urllib/i,
+      /scrapy/i,
+      /phantomjs/i,
+      /headless/i,
+    ];
+
+    const isSuspiciousBot = suspiciousPatterns.some(pattern => 
+      pattern.test(userAgent)
+    );
+
+    if (isSuspiciousBot) {
+      return new NextResponse('Forbidden', { status: 403 });
+    }
   }
 
   // Validate request method

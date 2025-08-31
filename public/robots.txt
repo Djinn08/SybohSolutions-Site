@@ -1,5 +1,5 @@
 # Syboh Solutions - Robots.txt
-# Security-focused configuration
+# SEO-friendly configuration
 
 User-agent: *
 Allow: /
@@ -12,8 +12,7 @@ Disallow: /private/
 Disallow: /*.json$
 Disallow: /*.xml$
 
-# Block common bot patterns
-User-agent: *
+# Block specific API endpoints
 Disallow: /api/contact
 Disallow: /api/onepager.pdf
 
@@ -27,9 +26,14 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Block suspicious bots
-User-agent: *
-Disallow: /
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
 
 # Sitemap location
 Sitemap: https://sybohsolutions.com/sitemap.xml
