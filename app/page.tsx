@@ -3,8 +3,43 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Syboh Solutions | Websites, Tech Installs & Ops in Lincoln, NE",
-  description: "Operator-first solutions for small businesses in Lincoln, NE. Websites, SaaS, tech installs, and ongoing support.",
+  title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
+  description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE. Custom websites, SaaS tools, tech installations, and ongoing maintenance starting at $149/mo.",
+  keywords: [
+    "web development Lincoln NE",
+    "website design Lincoln Nebraska", 
+    "tech installation Lincoln",
+    "business support Lincoln NE",
+    "website maintenance Lincoln",
+    "small business web design",
+    "operator-first solutions",
+    "tech consulting Lincoln NE"
+  ],
+  openGraph: {
+    title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
+    description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE. Custom websites, SaaS tools, tech installations, and ongoing maintenance starting at $149/mo.",
+    url: "https://sybohsolutions.com",
+    siteName: "Syboh Solutions",
+    images: [
+      {
+        url: "https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Syboh Solutions - Web Development and Tech Support in Lincoln, NE",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
+    description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE.",
+    images: ["https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png"],
+  },
+  alternates: {
+    canonical: "https://sybohsolutions.com",
+  },
 };
 
 

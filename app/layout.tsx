@@ -21,21 +21,69 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(COMPANY.siteUrl),
   title: {
-    default: "Syboh Solutions | Digital Tools & Business Support",
+    default: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
     template: `%s — Syboh Solutions`,
   },
-  description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
+  description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE. Custom websites, SaaS tools, and ongoing maintenance.",
+  keywords: [
+    "web development Lincoln NE",
+    "website design Lincoln Nebraska",
+    "tech installation Lincoln",
+    "business support Lincoln NE",
+    "SaaS tools Lincoln",
+    "website maintenance Lincoln",
+    "small business web design",
+    "operator-first solutions",
+    "tech consulting Lincoln NE",
+    "business automation Lincoln"
+  ],
+  authors: [{ name: "Syboh Solutions" }],
+  creator: "Syboh Solutions",
+  publisher: "Syboh Solutions",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Syboh Solutions | Digital Tools & Business Support",
-    description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
+    title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
+    description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE. Custom websites, SaaS tools, and ongoing maintenance.",
     url: COMPANY.siteUrl,
     siteName: COMPANY.shortName,
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: `${COMPANY.siteUrl}/images/sybohfrogtransparentbackgroundLOGO.png`,
+        width: 1200,
+        height: 630,
+        alt: "Syboh Solutions - Web Development and Tech Support in Lincoln, NE",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Syboh Solutions | Digital Tools & Business Support",
-    description: "We help businesses streamline operations, install tech solutions, build digital tools, and manage websites with ongoing support.",
+    title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
+    description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE.",
+    images: [`${COMPANY.siteUrl}/images/sybohfrogtransparentbackgroundLOGO.png`],
+    creator: "@sybohsolutions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Add your Google Search Console verification code
+  },
+  alternates: {
+    canonical: COMPANY.siteUrl,
   },
 };
 

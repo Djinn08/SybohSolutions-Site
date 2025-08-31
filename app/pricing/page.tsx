@@ -5,7 +5,45 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Website Care & Support Plans | Syboh Solutions Lincoln, NE",
-  description: "Choose the right monthly care plan for your website. Secure hosting, updates, SEO, and support — tailored for small businesses in Lincoln, NE.",
+  description: "Choose the right monthly care plan for your website. Essential Care $149/mo, Growth Care $349/mo, Premium Care $749/mo. Secure hosting, updates, SEO, and support — tailored for small businesses in Lincoln, NE.",
+  keywords: [
+    "website care plans Lincoln NE",
+    "website maintenance Lincoln Nebraska",
+    "website hosting Lincoln",
+    "SEO services Lincoln NE",
+    "website support Lincoln",
+    "monthly website care",
+    "website security Lincoln",
+    "website updates Lincoln NE",
+    "Essential Care $149",
+    "Growth Care $349",
+    "Premium Care $749"
+  ],
+  openGraph: {
+    title: "Website Care & Support Plans | Syboh Solutions Lincoln, NE",
+    description: "Choose the right monthly care plan for your website. Essential Care $149/mo, Growth Care $349/mo, Premium Care $749/mo. Secure hosting, updates, SEO, and support.",
+    url: "https://sybohsolutions.com/pricing",
+    siteName: "Syboh Solutions",
+    images: [
+      {
+        url: "https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png",
+        width: 1200,
+        height: 630,
+        alt: "Syboh Solutions Website Care Plans - Lincoln, NE",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Care & Support Plans | Syboh Solutions Lincoln, NE",
+    description: "Choose the right monthly care plan for your website. Starting at $149/mo.",
+    images: ["https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png"],
+  },
+  alternates: {
+    canonical: "https://sybohsolutions.com/pricing",
+  },
 };
 
 export default function PricingPage() {
