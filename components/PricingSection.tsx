@@ -179,7 +179,7 @@ export default function PricingSection() {
   const title = tab === "care" ? "Website Care Plans" : "Website Builds";
   const subtitle =
     tab === "care"
-      ? "We don&apos;t just build and disappear. Every Syboh site comes with a care plan to keep it secure, updated, and improving."
+      ? "We don't just build and disappear. Every Syboh site comes with a care plan to keep it secure, updated, and improving."
       : "Pick the build that fits today. Add a Care Plan to keep improving month after month.";
 
   // Handle anchor links for direct plan navigation
