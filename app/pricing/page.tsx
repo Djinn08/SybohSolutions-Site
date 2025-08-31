@@ -147,7 +147,7 @@ export default function PricingPage() {
           <div className="bg-muted/10 rounded-lg p-6">
             <h3 className="font-semibold mb-2">What tech do you use?</h3>
             <p className="text-sm text-muted-foreground">
-              We primarily work with WordPress, but also support custom React/Next.js sites, Shopify, and other platforms. We&apos;ll recommend the best solution for your needs.
+              We build custom websites using React, Next.js, and TypeScript. No WordPress or Shopify templates - just clean, performant code tailored to your business needs.
             </p>
           </div>
           
