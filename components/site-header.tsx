@@ -96,48 +96,58 @@ export function SiteHeader() {
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
-          <div className="fixed inset-0 z-40 bg-black/50" onClick={closeMobileMenu} />
-          <div className="fixed inset-y-0 right-0 z-50 w-64 bg-background border-l border-muted shadow-lg">
-            <div className="flex flex-col p-6 space-y-4">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-lg font-semibold gradient-text">Menu</span>
+          {/* Backdrop */}
+          <div className="fixed inset-0 z-40 bg-black/60" onClick={closeMobileMenu} />
+          
+          {/* Menu Panel */}
+          <div className="fixed inset-y-0 right-0 z-50 w-80 bg-background border-l border-muted shadow-2xl">
+            <div className="flex flex-col h-full">
+              {/* Menu Header */}
+              <div className="flex items-center justify-between p-6 border-b border-muted">
+                <span className="text-xl font-semibold gradient-text">Menu</span>
                 <button
                   onClick={closeMobileMenu}
                   className="p-2 hover:bg-muted/50 rounded-md transition-colors"
+                  aria-label="Close menu"
                 >
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
               
-              {/* Mobile Navigation Links */}
-              <nav className="flex flex-col space-y-3">
-                {NAV_LINKS.map((l) => {
-                  const isActive = pathname === l.href;
-                  return (
-                    <Link 
-                      key={l.href} 
-                      href={l.href} 
-                      onClick={closeMobileMenu}
-                      className={`text-base py-2 px-3 rounded-md transition-colors ${
-                        isActive 
-                          ? "bg-muted/20 text-foreground" 
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/10"
-                      }`}
-                    >
-                      {l.label}
-                    </Link>
-                  );
-                })}
+              {/* Navigation Links */}
+              <nav className="flex-1 p-6">
+                <div className="space-y-2">
+                  {NAV_LINKS.map((l) => {
+                    const isActive = pathname === l.href;
+                    return (
+                      <Link 
+                        key={l.href} 
+                        href={l.href} 
+                        onClick={closeMobileMenu}
+                        className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                          isActive 
+                            ? "bg-gradient-to-r from-accent-teal/20 to-accent-lime/20 text-foreground border border-accent-teal/30" 
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/20"
+                        }`}
+                      >
+                        {l.label}
+                      </Link>
+                    );
+                  })}
+                </div>
               </nav>
 
-              {/* Mobile CTA Button */}
-              <div className="pt-4 border-t border-muted">
+              {/* CTA Section */}
+              <div className="p-6 border-t border-muted bg-muted/10">
+                <p className="text-sm text-muted-foreground mb-4">
+                  Ready to get started with your project?
+                </p>
                 <Link
                   href="/start-project"
                   onClick={closeMobileMenu}
-                  className="w-full inline-flex h-12 items-center justify-center rounded-md gradient-bg text-background font-medium transition-all hover:opacity-90"
+                  className="w-full inline-flex h-12 items-center justify-center rounded-lg gradient-bg text-background font-semibold transition-all hover:opacity-90 shadow-lg"
                 >
                   Book a consult
                 </Link>
