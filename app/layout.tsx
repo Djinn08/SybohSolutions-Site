@@ -1,57 +1,71 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Poppins, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { COMPANY } from "@/lib/constants";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import "./globals.css";
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL(COMPANY.siteUrl),
   title: {
     default: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
-    template: "%s | Syboh Solutions"
+    template: `%s — Syboh Solutions`,
   },
-  description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE. Custom websites, SaaS tools, tech installations, and ongoing maintenance starting at $149/mo.",
+  description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE. Custom websites, SaaS tools, and ongoing maintenance.",
   keywords: [
     "web development Lincoln NE",
     "website design Lincoln Nebraska",
     "tech installation Lincoln",
     "business support Lincoln NE",
+    "SaaS tools Lincoln",
     "website maintenance Lincoln",
     "small business web design",
     "operator-first solutions",
     "tech consulting Lincoln NE",
-    "Lincoln Nebraska web services",
-    "local web development"
+    "business automation Lincoln"
   ],
-  authors: [{ name: "Syboh Solutions LLC" }],
-  creator: "Syboh Solutions LLC",
-  publisher: "Syboh Solutions LLC",
+  authors: [{ name: "Syboh Solutions" }],
+  creator: "Syboh Solutions",
+  publisher: "Syboh Solutions",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://sybohsolutions.com",
-    siteName: "Syboh Solutions",
     title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
-    description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE. Custom websites, SaaS tools, tech installations, and ongoing maintenance starting at $149/mo.",
+    description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE. Custom websites, SaaS tools, and ongoing maintenance.",
+    url: COMPANY.siteUrl,
+    siteName: COMPANY.shortName,
     images: [
       {
-        url: "https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png",
+        url: `${COMPANY.siteUrl}/images/sybohfrogtransparentbackgroundLOGO.png`,
         width: 1200,
         height: 630,
         alt: "Syboh Solutions - Web Development and Tech Support in Lincoln, NE",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Syboh Solutions | Websites, Tech Installs & Business Support in Lincoln, NE",
-    description: "Operator-first web development and tech solutions for small businesses in Lincoln, NE.",
-    images: ["https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png"],
+    description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE.",
+    images: [`${COMPANY.siteUrl}/images/sybohfrogtransparentbackgroundLOGO.png`],
     creator: "@sybohsolutions",
   },
   robots: {
@@ -66,31 +80,37 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-verification-code", // Add your Google Search Console verification code
   },
   alternates: {
-    canonical: "https://sybohsolutions.com",
+    canonical: COMPANY.siteUrl,
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${poppins.variable} ${geistMono.variable} antialiased`}
+      >
         {/* Skip to content link for accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         
         <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
+        <div className="min-h-[calc(100dvh-160px)]">
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+        </div>
         <SiteFooter />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
