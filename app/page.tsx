@@ -52,11 +52,10 @@ export default function Home() {
           <Image
             src="/images/sybohfrogtransparentbackgroundLOGO.png"
             alt="Syboh Solutions Logo"
-            width={0}
-            height={0}
+            width={128}
+            height={128}
             className="w-32 h-auto mx-auto mb-8"
             priority
-            unoptimized
           />
           <h1 className="text-5xl font-bold tracking-tight gradient-text md:text-7xl mb-6">
             Websites that grow with your business.

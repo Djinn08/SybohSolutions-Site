@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 type Feature = { label: string };
 type Plan = {
@@ -101,116 +102,65 @@ const builds: Plan[] = [
   },
   {
     name: "Custom Build",
-    price: "Custom",
-    tagline: "Advanced features, integrations, or headless.",
-    ctaLabel: "Request a Quote",
+    price: "$4,999+",
+    tagline: "Complex functionality, integrations, custom features.",
+    ctaLabel: "Start Custom",
     ctaHref: "/start-project",
     features: [
-      { label: "Complex IA & custom components" },
-      { label: "Integrations (POS, CRM, automations)" },
-      { label: "Multi-location / multi-lang options" },
-      { label: "Performance budget & accessibility pass" },
-      { label: "Pair with any Care Plan" },
+      { label: "Custom functionality & integrations" },
+      { label: "Advanced user management" },
+      { label: "API development & third-party connections" },
+      { label: "E-commerce or membership features" },
+      { label: "Custom admin dashboard" },
     ],
   },
 ];
 
-function PlanCard({ plan }: { plan: Plan }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div
-      className={`relative flex flex-col rounded-2xl border bg-muted/20 text-foreground shadow-xl
-      ${plan.popular ? "border-accent-teal/60 ring-1 ring-accent-teal/40" : "border-muted"}`}
-    >
-      {plan.popular && (
-        <span className="absolute -top-3 right-4 rounded-full gradient-bg px-3 py-1 text-xs font-semibold text-background">
-          Most popular
-        </span>
-      )}
-
-      <div className="p-6">
-        <h3 className="text-xl font-semibold">{plan.name}</h3>
-        <div className="mt-2 flex items-end gap-1">
-          <span className="text-4xl font-bold gradient-text">{plan.price}</span>
-          {plan.period && <span className="pb-1 text-sm text-muted-foreground">{plan.period}</span>}
-        </div>
-        <p className="mt-3 text-sm text-muted-foreground">{plan.tagline}</p>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="mt-5 flex w-full items-center justify-between rounded-lg border border-muted bg-muted/10 px-4 py-3 text-sm hover:bg-muted/20 transition-colors"
-        >
-          <span>What&apos;s included</span>
-          <ChevronDown
-            className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
-          />
-        </button>
-
-        {open && (
-          <ul className="mt-4 space-y-2 text-sm">
-            {plan.features.map((f, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full gradient-bg" />
-                <span className="text-muted-foreground">{f.label}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <div className="mt-auto p-6">
-        <Link
-          href={plan.ctaHref}
-          className={`inline-flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold transition-all
-            ${plan.popular ? "gradient-bg text-background hover:opacity-90" : "bg-muted/20 hover:bg-muted/30"}`}
-        >
-          {plan.ctaLabel}
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 export default function PricingSection() {
-  const [tab, setTab] = useState<"care" | "builds">("care");
+  const [activeTab, setActiveTab] = useState<"care" | "builds">("care");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const activePlans = tab === "care" ? carePlans : builds;
-  const title = tab === "care" ? "Website Care Plans" : "Website Builds";
+  const handlePlanSelection = async (plan: Plan) => {
+    setIsLoading(true);
+    // Simulate loading for better UX
+    setTimeout(() => {
+      setIsLoading(false);
+      window.location.href = plan.ctaHref;
+    }, 500);
+  };
+
   const subtitle =
-    tab === "care"
+    activeTab === "care"
       ? "We don't just build and disappear. Every Syboh site comes with a care plan to keep it secure, updated, and improving."
       : "Pick the build that fits today. Add a Care Plan to keep improving month after month.";
 
-  // Handle anchor links for direct plan navigation
-  React.useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#essential" || hash === "#growth" || hash === "#premium") {
-      setTab("care");
-    } else if (hash === "#starter" || hash === "#business" || hash === "#custom") {
-      setTab("builds");
-    }
-  }, []);
-
   return (
-    <section id="pricing" className="mx-auto max-w-6xl px-6 py-16">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold gradient-text">{title}</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">{subtitle}</p>
+    <section className="mx-auto max-w-6xl px-6 py-16">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold gradient-text mb-4">Choose Your Plan</h2>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>
+      </div>
 
-        <div className="mt-6 inline-flex rounded-lg border border-muted bg-muted/20 p-1">
+      {/* Tab Navigation */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex rounded-lg bg-muted/20 p-1">
           <button
-            onClick={() => setTab("care")}
-            className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-              tab === "care" ? "gradient-bg text-background" : "text-muted-foreground hover:text-foreground"
+            onClick={() => setActiveTab("care")}
+            className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+              activeTab === "care"
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            Care Plans
+            Website Care Plans
           </button>
           <button
-            onClick={() => setTab("builds")}
-            className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-              tab === "builds" ? "gradient-bg text-background" : "text-muted-foreground hover:text-foreground"
+            onClick={() => setActiveTab("builds")}
+            className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+              activeTab === "builds"
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Website Builds
@@ -218,18 +168,90 @@ export default function PricingSection() {
         </div>
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {activePlans.map((p) => (
-          <PlanCard key={p.name} plan={p} />
+      {/* Plans Grid */}
+      <div className="grid gap-6 md:grid-cols-3">
+        {(activeTab === "care" ? carePlans : builds).map((plan, index) => (
+          <div
+            key={plan.name}
+            className={`relative rounded-xl border p-6 transition-all duration-300 hover:scale-[1.02] ${
+              plan.popular
+                ? "border-accent-teal/60 bg-muted/20 shadow-lg shadow-accent-teal/10"
+                : "border-muted bg-muted/10 hover:bg-muted/20"
+            }`}
+          >
+            {/* Popular Badge */}
+            {plan.popular && (
+              <span className="absolute -top-3 right-4 rounded-full gradient-bg px-3 py-1 text-xs font-semibold text-background">
+                Most Popular
+              </span>
+            )}
+
+            {/* Plan Header */}
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+              <div className="flex items-baseline gap-1 mb-2">
+                <span className="text-3xl font-bold gradient-text">{plan.price}</span>
+                {plan.period && (
+                  <span className="text-sm text-muted-foreground font-normal">{plan.period}</span>
+                )}
+              </div>
+              <p className="text-sm text-muted-foreground">{plan.tagline}</p>
+            </div>
+
+            {/* Features */}
+            <ul className="space-y-3 mb-6">
+              {plan.features.map((feature, featureIndex) => (
+                <li key={featureIndex} className="flex items-start gap-3 text-sm">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full gradient-bg flex-shrink-0"></span>
+                  <span>{feature.label}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => handlePlanSelection(plan)}
+              disabled={isLoading}
+              className={`w-full inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                plan.popular
+                  ? "gradient-bg text-background hover:opacity-90"
+                  : "border border-muted hover:bg-muted/20"
+              }`}
+            >
+              {isLoading ? (
+                <>
+                  <LoadingSpinner size="sm" className={plan.popular ? "text-background" : "text-foreground"} />
+                  Loading...
+                </>
+              ) : (
+                plan.ctaLabel
+              )}
+            </button>
+          </div>
         ))}
       </div>
 
-      {tab === "builds" && (
-        <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-muted-foreground">
-          💡 Prefer a lower upfront cost? Choose a build + commit to the Growth Care Plan for 12 months
-          and save <span className="text-accent-teal">$300</span> on your build.
+      {/* FAQ Section */}
+      <div className="mt-16 text-center">
+        <h3 className="text-xl font-semibold mb-4">Questions about pricing?</h3>
+        <p className="text-muted-foreground mb-6">
+          We&apos;re here to help you choose the right plan for your business.
         </p>
-      )}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all"
+          >
+            Get in Touch
+          </Link>
+          <Link
+            href="/start-project"
+            className="inline-flex items-center justify-center rounded-lg border border-muted px-6 py-3 font-medium hover:bg-muted/20 transition-colors"
+          >
+            Start a Project
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

@@ -13,8 +13,10 @@ export function SiteFooter() {
           
           <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About</Link>
             <Link href="/pricing" className="hover:text-white transition-colors">Plans</Link>
             <Link href="/start-project" className="hover:text-white transition-colors">Start a Project</Link>
+            <Link href="/add-ons" className="hover:text-white transition-colors">Add-Ons</Link>
             <Link href="/work" className="hover:text-white transition-colors">Work</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy</Link>
