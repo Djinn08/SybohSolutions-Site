@@ -19,7 +19,7 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b border-muted bg-background backdrop-blur supports-[backdrop-filter]:bg-background/95">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 font-medium">
           <Image
@@ -99,11 +99,11 @@ export function SiteHeader() {
           {/* Backdrop */}
           <div className="fixed inset-0 z-40 bg-black/60" onClick={closeMobileMenu} />
           
-          {/* Menu Panel */}
+          {/* Menu Panel - SOLID BACKGROUND */}
           <div className="fixed inset-y-0 right-0 z-50 w-80 bg-background border-l border-muted shadow-2xl">
             <div className="flex flex-col h-full">
               {/* Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-muted">
+              <div className="flex items-center justify-between p-6 border-b border-muted bg-background">
                 <span className="text-xl font-semibold gradient-text">Menu</span>
                 <button
                   onClick={closeMobileMenu}
@@ -117,7 +117,7 @@ export function SiteHeader() {
               </div>
               
               {/* Navigation Links */}
-              <nav className="flex-1 p-6">
+              <nav className="flex-1 p-6 bg-background">
                 <div className="space-y-2">
                   {NAV_LINKS.map((l) => {
                     const isActive = pathname === l.href;
@@ -140,7 +140,7 @@ export function SiteHeader() {
               </nav>
 
               {/* CTA Section */}
-              <div className="p-6 border-t border-muted bg-muted/10">
+              <div className="p-6 border-t border-muted bg-background">
                 <p className="text-sm text-muted-foreground mb-4">
                   Ready to get started with your project?
                 </p>
