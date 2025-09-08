@@ -12,6 +12,13 @@ Disallow: /private/
 Disallow: /*.json$
 Disallow: /*.xml$
 
+# Block unused service pages (not part of core offerings)
+Disallow: /services/
+Disallow: /legal/
+Disallow: /offers/
+Disallow: /process/
+Disallow: /roadmaps/
+
 # Block specific API endpoints
 Disallow: /api/contact
 Disallow: /api/onepager.pdf
