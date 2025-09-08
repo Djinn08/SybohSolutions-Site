@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: [
@@ -14,8 +16,10 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    return [
-      {
+    const base = [];
+    // If project currently adds blocking headers, only enable them in prod:
+    if (isProd) {
+      base.push({
         source: "/(.*)",
         headers: [
           // Strict Transport Security
@@ -76,8 +80,9 @@ const nextConfig: NextConfig = {
             ].join("; "),
           },
         ],
-      },
-    ];
+      });
+    }
+    return base;
   },
   // Additional security configurations
   poweredByHeader: false,

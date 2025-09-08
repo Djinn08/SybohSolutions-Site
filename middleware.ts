@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 // Simple in-memory rate limiting (for production, consider Redis)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -45,7 +46,8 @@ function getSecurityHeaders() {
   };
 }
 
-export function middleware(request: NextRequest) {
+// Move any existing middleware logic into this function (Cursor: preserve it exactly).
+function prodMiddleware(req: NextRequest) {
   const response = NextResponse.next();
 
   // Add security headers
@@ -54,8 +56,8 @@ export function middleware(request: NextRequest) {
   });
 
   // Rate limiting for API routes
-  if (request.nextUrl.pathname.startsWith('/api/')) {
-    if (!checkRateLimit(request)) {
+  if (req.nextUrl.pathname.startsWith('/api/')) {
+    if (!checkRateLimit(req)) {
       return new NextResponse(
         JSON.stringify({ error: 'Too many requests' }),
         {
@@ -70,7 +72,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Block suspicious requests
-  const userAgent = request.headers.get('user-agent') || '';
+  const userAgent = req.headers.get('user-agent') || '';
   
   // List of legitimate search engine bots to always allow
   const legitimateBots = [
@@ -132,7 +134,7 @@ export function middleware(request: NextRequest) {
 
   // Validate request method
   const allowedMethods = ['GET', 'POST', 'HEAD', 'OPTIONS'];
-  if (!allowedMethods.includes(request.method)) {
+  if (!allowedMethods.includes(req.method)) {
     return new NextResponse('Method Not Allowed', { status: 405 });
   }
 
@@ -144,7 +146,7 @@ export function middleware(request: NextRequest) {
   ];
 
   for (const header of suspiciousHeaders) {
-    const value = request.headers.get(header);
+    const value = req.headers.get(header);
     if (value && (value.includes('localhost') || value.includes('127.0.0.1'))) {
       return new NextResponse('Forbidden', { status: 403 });
     }
@@ -153,15 +155,17 @@ export function middleware(request: NextRequest) {
   return response;
 }
 
+export function middleware(req: NextRequest) {
+  if (process.env.NODE_ENV === 'development' || process.env.DEV_BYPASS === '1') {
+    // Helpful debug header in dev
+    const res = NextResponse.next();
+    res.headers.set('x-dev-bypass', 'true');
+    return res;
+  }
+  return prodMiddleware(req);
+}
+
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder
-     */
-    '/((?!_next/static|_next/image|favicon.ico|public/).*)',
-  ],
+  // keep existing matcher if present; otherwise use a safe default that skips static files
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)).*)'],
 };

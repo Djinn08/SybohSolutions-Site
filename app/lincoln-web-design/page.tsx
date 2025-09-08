@@ -56,99 +56,112 @@ export default function Page() {
       <Script id="ld-faq" type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      <main className="mx-auto max-w-4xl px-4 py-12 space-y-16">
-        {/* Hero */}
-        <section className="space-y-4">
-          <h1 className="text-3xl md:text-5xl font-semibold">
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="text-center py-16 px-6">
+          <h1 className="text-4xl font-semibold tracking-tight gradient-text md:text-6xl mb-4">
             Web Design & SEO for Small Businesses in Lincoln, NE
           </h1>
-          <p className="text-lg">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Operator-first sites that load fast, rank locally, and come with ongoing care so you never fall behind.
           </p>
-          <div className="flex gap-3">
-            <Link href="/contact" className="rounded-xl px-5 py-3 bg-lime-400 text-black font-medium">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all">
               Get a quote
             </Link>
-            <Link href="/work" className="rounded-xl px-5 py-3 border border-white/30">
+            <Link href="/work" className="inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-white font-medium hover:bg-white/10 transition-all">
               See client work
             </Link>
           </div>
-          <p className="text-sm">Or call <a className="underline" href="tel:+14024136279">(402) 413-6279</a></p>
+          <p className="text-sm text-muted-foreground">Or call <a className="underline hover:text-foreground transition-colors" href="tel:+14024136279">(402) 413-6279</a></p>
         </section>
 
-        {/* Benefits */}
-        <section className="grid gap-6">
-          <h2 className="text-2xl font-semibold">What you get</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Custom build with modern stack, tuned for speed and Core Web Vitals.</li>
-            <li>Local SEO + Google Business Profile support for Lincoln visibility.</li>
-            <li>Content edits, backups, and security updates via Care Plans.</li>
-            <li>Hosting, SSL, analytics, and event tracking configured.</li>
-          </ul>
-        </section>
+        {/* Content Sections */}
+        <section className="mx-auto max-w-3xl px-6 pb-16 space-y-12">
 
-        {/* Pricing snapshot */}
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">Simple pricing</h2>
-          <p>Typical builds: <strong>$1.5k–$4k</strong>. Care Plans from <strong>$149/mo</strong>.</p>
-          <p className="text-sm">Transparent scope before we start. Ask about rev-share or staged rollouts.</p>
-          <Link href="/add-ons" className="underline">See services & care plans →</Link>
-        </section>
-
-        {/* Portfolio teaser */}
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">Recent Lincoln projects</h2>
-          <p>From breweries to studios, we build sites that drive bookings and foot traffic.</p>
-          <Link href="/work" className="underline">Browse the portfolio →</Link>
-        </section>
-
-        {/* Local SEO & Areas */}
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">Local SEO for Lincoln</h2>
-          <p>
-            We optimize for neighborhoods and nearby towns—Downtown, Near South, University Place, Waverly, Bennet, and more—so you show up when customers search.
-          </p>
-        </section>
-
-        {/* Map embed (city view) */}
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">We serve Lincoln, NE</h2>
-          <div className="aspect-video w-full overflow-hidden rounded-2xl">
-            <iframe
-              title="Lincoln, NE Map"
-              className="h-full w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Lincoln,NE&output=embed">
-            </iframe>
+          {/* Benefits */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">What you get</h2>
+            <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+              <li><strong className="text-foreground">Custom build with modern stack</strong> — tuned for speed and Core Web Vitals.</li>
+              <li><strong className="text-foreground">Local SEO + Google Business Profile</strong> — support for Lincoln visibility.</li>
+              <li><strong className="text-foreground">Content edits, backups, and security updates</strong> — via Care Plans.</li>
+              <li><strong className="text-foreground">Hosting, SSL, analytics, and event tracking</strong> — configured.</li>
+            </ul>
           </div>
-        </section>
 
-        {/* FAQs */}
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">FAQs</h2>
-          <details><summary className="cursor-pointer font-medium">How long does a project take?</summary>
-            <p className="mt-2">2–6 weeks depending on scope and content readiness.</p>
-          </details>
-          <details><summary className="cursor-pointer font-medium">Can you work with my existing content or brand?</summary>
-            <p className="mt-2">Yes. We tighten copy, apply your brand, and fill gaps where needed.</p>
-          </details>
-          <details><summary className="cursor-pointer font-medium">Do you provide hosting and maintenance?</summary>
-            <p className="mt-2">Yes—hosting, SSL, updates, monitoring, and support are included in Care Plans.</p>
-          </details>
-        </section>
+          {/* Pricing snapshot */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">Simple pricing</h2>
+            <p className="text-muted-foreground">Typical builds: <strong className="text-foreground">$1.5k–$4k</strong>. Care Plans from <strong className="text-foreground">$149/mo</strong>.</p>
+            <p className="text-sm text-muted-foreground">Transparent scope before we start. Ask about rev-share or staged rollouts.</p>
+            <Link href="/add-ons" className="inline-flex items-center text-accent-teal hover:text-accent-lime transition-colors">
+              See services & care plans →
+            </Link>
+          </div>
 
-        {/* Final CTA */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Ready to grow?</h2>
-          <p>Tell us about your business and we&apos;ll propose the fastest path to value.</p>
-          <div className="flex gap-3">
-            <Link href="/contact" className="rounded-xl px-5 py-3 bg-lime-400 text-black font-medium">
-              Start a project
+          {/* Portfolio teaser */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">Recent Lincoln projects</h2>
+            <p className="text-muted-foreground">From breweries to studios, we build sites that drive bookings and foot traffic.</p>
+            <Link href="/work" className="inline-flex items-center text-accent-teal hover:text-accent-lime transition-colors">
+              Browse the portfolio →
             </Link>
-            <Link href="/add-ons" className="rounded-xl px-5 py-3 border border-white/30">
-              View services
-            </Link>
+          </div>
+
+          {/* Local SEO & Areas */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">Local SEO for Lincoln</h2>
+            <p className="text-muted-foreground">
+              We optimize for neighborhoods and nearby towns—Downtown, Near South, University Place, Waverly, Bennet, and more—so you show up when customers search.
+            </p>
+          </div>
+
+          {/* Map embed (city view) */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">We serve Lincoln, NE</h2>
+            <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10">
+              <iframe
+                title="Lincoln, NE Map"
+                className="h-full w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Lincoln,NE&output=embed">
+              </iframe>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold gradient-text">FAQs</h2>
+            <div className="space-y-3">
+              <details className="rounded-lg border border-white/10 bg-neutral-900/50 p-4">
+                <summary className="cursor-pointer font-medium text-foreground hover:text-accent-teal transition-colors">How long does a project take?</summary>
+                <p className="mt-2 text-muted-foreground">2–6 weeks depending on scope and content readiness.</p>
+              </details>
+              <details className="rounded-lg border border-white/10 bg-neutral-900/50 p-4">
+                <summary className="cursor-pointer font-medium text-foreground hover:text-accent-teal transition-colors">Can you work with my existing content or brand?</summary>
+                <p className="mt-2 text-muted-foreground">Yes. We tighten copy, apply your brand, and fill gaps where needed.</p>
+              </details>
+              <details className="rounded-lg border border-white/10 bg-neutral-900/50 p-4">
+                <summary className="cursor-pointer font-medium text-foreground hover:text-accent-teal transition-colors">Do you provide hosting and maintenance?</summary>
+                <p className="mt-2 text-muted-foreground">Yes—hosting, SSL, updates, monitoring, and support are included in Care Plans.</p>
+              </details>
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <div className="text-center pt-8">
+            <h2 className="text-2xl font-semibold gradient-text mb-4">Ready to grow?</h2>
+            <p className="text-muted-foreground mb-6">Tell us about your business and we&apos;ll propose the fastest path to value.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all">
+                Start a project
+              </Link>
+              <Link href="/add-ons" className="inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-white font-medium hover:bg-white/10 transition-all">
+                View services
+              </Link>
+            </div>
           </div>
         </section>
       </main>

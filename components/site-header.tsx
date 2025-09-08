@@ -19,35 +19,38 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-muted bg-background backdrop-blur supports-[backdrop-filter]:bg-background/95">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-3 font-medium">
           <Image
             src="/images/sybohfrogtransparentbackgroundLOGO.png"
             alt="Syboh Solutions Logo"
             width={40}
             height={40}
-            className="h-8 w-auto md:h-10"
+            className="h-9 w-auto md:h-11"
             priority
           />
-          <span className="text-lg font-semibold gradient-text">{COMPANY.shortName}</span>
+          <span className="text-xl font-semibold gradient-text">{COMPANY.shortName}</span>
         </Link>
         
-        {/* Desktop Navigation */}
-        <nav className="hidden gap-6 md:flex">
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden gap-8 md:flex items-center">
           {NAV_LINKS.map((l) => {
             const isActive = pathname === l.href;
             return (
               <Link 
                 key={l.href} 
                 href={l.href} 
-                className={`text-sm transition-colors ${
+                className={`text-sm font-medium transition-all duration-200 py-2 ${
                   isActive 
-                    ? "text-foreground" 
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-foreground relative" 
+                    : "text-muted-foreground hover:text-foreground hover:scale-105"
                 }`}
               >
                 {l.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 gradient-bg rounded-full"></span>
+                )}
               </Link>
             );
           })}
@@ -56,7 +59,7 @@ export function SiteHeader() {
         {/* Desktop CTA Button */}
         <Link
           href="/start-project"
-          className="hidden md:inline-flex h-9 items-center justify-center rounded-md gradient-bg px-4 text-background font-medium transition-all hover:opacity-90 whitespace-nowrap"
+          className="hidden md:inline-flex h-10 items-center justify-center rounded-lg gradient-bg px-6 text-background font-semibold transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap shadow-lg"
         >
           Book a consult
         </Link>
