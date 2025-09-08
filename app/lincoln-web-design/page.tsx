@@ -117,18 +117,12 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Map embed (city view) */}
+          {/* Map embed (city view) - temporarily removed */}
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold gradient-text">We serve Lincoln, NE</h2>
-            <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10">
-              <iframe
-                title="Lincoln, NE Map"
-                className="h-full w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Lincoln,NE&output=embed">
-              </iframe>
-            </div>
+            <p className="text-muted-foreground">
+              We provide web design and development services throughout Lincoln, Nebraska and surrounding areas.
+            </p>
           </div>
 
           {/* FAQs */}
