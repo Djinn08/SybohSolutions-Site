@@ -25,6 +25,16 @@ export const metadata: Metadata = {
     template: `%s — Syboh Solutions`,
   },
   description: "Operator-first web development, tech installations, and business support for small businesses in Lincoln, NE. Custom websites, SaaS tools, and ongoing maintenance.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/android-chrome-192x192.png', sizes: '180x180', type: 'image/png' }],
+  },
   keywords: [
     "web development Lincoln NE",
     "website design Lincoln Nebraska",

@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
       "@vercel/speed-insights",
     ],
   },
+  async redirects() {
+    return [
+      { source: '/services/operations', destination: '/add-ons', permanent: true }
+    ];
+  },
   async headers() {
     return [
       {

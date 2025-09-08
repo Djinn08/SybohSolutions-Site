@@ -35,6 +35,11 @@ module.exports = {
         priority: 0.9,
       },
       {
+        loc: '/lincoln-web-design',
+        changefreq: 'weekly',
+        priority: 0.9,
+      },
+      {
         loc: '/start-project',
         changefreq: 'monthly',
         priority: 0.8,
