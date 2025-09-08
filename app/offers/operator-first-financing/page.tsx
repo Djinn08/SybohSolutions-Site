@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
-// This page has been permanently removed
+// Redirect to pricing page since financing info would be there
 export default function OperatorFirstFinancingPage() {
-  notFound();
+  redirect('/pricing');
 }

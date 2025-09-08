@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
-// This page has been permanently removed
+// Redirect to add-ons page since services is not a standalone page
 export default function ServicesPage() {
-  notFound();
+  redirect('/add-ons');
 }

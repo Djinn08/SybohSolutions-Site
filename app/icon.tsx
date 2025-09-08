@@ -26,11 +26,11 @@ export default function Icon() {
         }}
       >
         <img
-          src="https://sybohsolutions.com/images/SybohWeblogo.png"
+          src="https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png"
           alt="Syboh Solutions"
           style={{
-            width: '80%',
-            height: '80%',
+            width: '100%',
+            height: '100%',
             objectFit: 'contain',
           }}
         />

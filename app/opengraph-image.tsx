@@ -35,6 +35,25 @@ export default async function Image() {
             background: "linear-gradient(135deg, rgba(0, 230, 230, 0.1), rgba(214, 255, 87, 0.1))",
           }}
         />
+        {/* Logo */}
+        <div style={{
+          position: "absolute",
+          top: 80,
+          left: 80,
+          width: 120,
+          height: 120,
+        }}>
+          <img
+            src="https://sybohsolutions.com/images/sybohfrogtransparentbackgroundLOGO.png"
+            alt="Syboh Solutions Logo"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+        
         <div style={{ 
           fontSize: 36, 
           opacity: 0.85,

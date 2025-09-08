@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
-// This page has been permanently removed
+// Redirect to about page since process info is now in the about page
 export default function ProcessPage() {
-  notFound();
+  redirect('/about');
 }

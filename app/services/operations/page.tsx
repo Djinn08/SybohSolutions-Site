@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
-// This page has been permanently removed
+// Redirect to add-ons page since operations is not a standalone service
 export default function OperationsPage() {
-  notFound();
+  redirect('/add-ons');
 }
