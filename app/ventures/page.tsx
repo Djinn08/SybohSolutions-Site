@@ -23,13 +23,11 @@ export default function VenturesPage() {
           name: "The Hermit's Hovel",
           description: "Professional tattoo shop & mystical artistry - dark academia and occult symbolism",
           url: "https://hermits-hovel.vercel.app",
-          imageUrl: "/images/hermits-hovel-preview.jpg",
         },
         {
           name: "The World of SaFrol Hodol",
           description: "Fantasy book trilogy author website - Scott Bohlin's epic fantasy world",
           url: "https://worldofsafrolhodol.com",
-          imageUrl: "/images/safrol-hodol-preview.jpg",
         },
       ],
     },
@@ -97,24 +95,19 @@ export default function VenturesPage() {
                       <div key={projectIndex} className="rounded-xl border border-white/10 bg-muted/10 p-6 space-y-4">
                         {/* Project Image Placeholder */}
                         <div className="aspect-video bg-gradient-to-br from-accent-teal/20 to-accent-lime/20 rounded-lg flex items-center justify-center relative overflow-hidden">
-                          {project.imageUrl ? (
-                            <Image
-                              src={project.imageUrl}
-                              alt={`${project.name} website preview`}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 50vw"
-                            />
-                          ) : (
-                            <div className="text-center">
-                              <div className="w-12 h-12 rounded-full gradient-bg mx-auto mb-2 flex items-center justify-center">
-                                <svg className="w-6 h-6 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                              </div>
-                              <p className="text-sm text-muted-foreground">Website Preview</p>
+                          <div className="text-center">
+                            <div className="w-16 h-16 rounded-full gradient-bg mx-auto mb-3 flex items-center justify-center">
+                              <svg className="w-8 h-8 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              </svg>
                             </div>
-                          )}
+                            <p className="text-sm font-medium text-muted-foreground mb-1">
+                              {project.name}
+                            </p>
+                            <p className="text-xs text-muted-foreground/70">
+                              Website Preview Coming Soon
+                            </p>
+                          </div>
                         </div>
                         
                         {/* Project Details */}
