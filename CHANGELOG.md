@@ -38,6 +38,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added external link styling with hover effects and accessibility attributes
 
 ### Changed
+- **Ventures Page Layout**: Complete redesign from horizontal grid to vertical list format
+  - Converted from 3-column card grid to single-column vertical layout
+  - Each venture now displayed as a full-width section with generous spacing
+  - Removed all hover effects and interactive elements (cards → informational sections)
+  - Eliminated "Learn More" buttons as requested
+  - Added subtle gradient dividers between venture sections
+  - Improved typography hierarchy with larger headings and descriptions
+  - Enhanced Lincoln Web Design section with dedicated sub-project cards
+  - Added image placeholders for client website previews
+  - Responsive design: mobile-first with proper spacing on all devices
+
+### Changed
 - **Navigation Restructure**: Complete navigation overhaul
   - Renamed "Work" tab to "Ventures" across all pages and routes
   - Removed "Start a Project" tab from navigation (consolidated with "Book a consult" button)
