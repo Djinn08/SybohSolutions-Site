@@ -219,7 +219,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold gradient-text mb-4">Ready to start?</h2>
           <Link
-            href="/start-project"
+            href="/contact"
             className="inline-flex h-14 items-center justify-center rounded-md gradient-bg px-8 text-background font-semibold text-lg transition-all hover:opacity-90"
           >
             Start a Project

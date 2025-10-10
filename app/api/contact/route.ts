@@ -7,11 +7,72 @@ interface ContactFormData {
   phone?: string;
   company?: string;
   message: string;
+  website?: string; // Honeypot field
+  'g-recaptcha-response'?: string; // reCAPTCHA token
+}
+
+interface RecaptchaResponse {
+  success: boolean;
+  challenge_ts?: string;
+  hostname?: string;
+  score?: number;
+  action?: string;
+  'error-codes'?: string[];
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body: ContactFormData = await req.json();
+
+    // Anti-spam check #1: Honeypot field
+    // If the 'website' field is filled, it's likely a bot
+    if (body.website && body.website.trim() !== '') {
+      console.warn('Honeypot triggered - potential spam submission blocked');
+      // Return success to not alert the bot
+      return NextResponse.json({ success: true });
+    }
+
+    // Anti-spam check #2: Verify reCAPTCHA v3 token
+    const recaptchaToken = body['g-recaptcha-response'];
+    const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+    if (!recaptchaToken || !recaptchaSecretKey) {
+      console.warn('reCAPTCHA verification missing');
+      return NextResponse.json(
+        { success: false, error: "Security verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
+
+    // Verify reCAPTCHA token with Google
+    const recaptchaVerifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+    const recaptchaResponse = await fetch(recaptchaVerifyUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${recaptchaSecretKey}&response=${recaptchaToken}`,
+    });
+
+    const recaptchaData: RecaptchaResponse = await recaptchaResponse.json();
+
+    // Check if reCAPTCHA verification was successful
+    if (!recaptchaData.success) {
+      console.warn('reCAPTCHA verification failed:', recaptchaData['error-codes']);
+      return NextResponse.json(
+        { success: false, error: "Security verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
+
+    // Check reCAPTCHA score (v3 returns a score from 0.0 to 1.0)
+    // Score interpretation: 1.0 is very likely a good interaction, 0.0 is very likely a bot
+    const minScore = 0.5; // Adjust threshold as needed (0.5 is recommended)
+    if (recaptchaData.score !== undefined && recaptchaData.score < minScore) {
+      console.warn(`reCAPTCHA score too low: ${recaptchaData.score} - potential spam blocked`);
+      // Return success to not alert sophisticated bots
+      return NextResponse.json({ success: true });
+    }
 
     // Validate required fields
     if (!body.name || !body.email || !body.message) {

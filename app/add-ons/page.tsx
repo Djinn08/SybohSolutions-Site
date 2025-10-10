@@ -221,7 +221,7 @@ export default function AddOnsPage() {
               Get a Quote
             </Link>
             <Link
-              href="/start-project"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-lg border border-muted px-8 py-4 font-semibold hover:bg-muted/20 transition-colors"
             >
               Start a Project

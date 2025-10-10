@@ -40,19 +40,14 @@ module.exports = {
         priority: 0.9,
       },
       {
-        loc: '/start-project',
-        changefreq: 'monthly',
-        priority: 0.8,
-      },
-      {
         loc: '/add-ons',
         changefreq: 'monthly',
         priority: 0.7,
       },
       {
-        loc: '/work',
+        loc: '/ventures',
         changefreq: 'weekly',
-        priority: 0.6,
+        priority: 0.8,
       },
       {
         loc: '/contact',

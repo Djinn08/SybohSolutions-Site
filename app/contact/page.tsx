@@ -1,14 +1,33 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    // Check if reCAPTCHA is loaded
+    if (typeof window !== 'undefined' && window.grecaptcha) {
+      window.grecaptcha.ready(() => {
+        setRecaptchaReady(true);
+      });
+    }
+  }, []);
 
   const validateForm = (formData: FormData) => {
     const errors: Record<string, string> = {};
@@ -46,12 +65,30 @@ export default function ContactPage() {
       return;
     }
 
+    // Get reCAPTCHA token
+    let recaptchaToken = '';
+    try {
+      if (window.grecaptcha && recaptchaReady) {
+        recaptchaToken = await window.grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+          { action: 'contact_form' }
+        );
+      }
+    } catch (err) {
+      console.error('reCAPTCHA error:', err);
+      setError('Security verification failed. Please try again.');
+      setLoading(false);
+      return;
+    }
+
     const payload = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
       company: formData.get("company") as string,
       message: formData.get("message") as string,
+      website: formData.get("website") as string, // Honeypot field
+      'g-recaptcha-response': recaptchaToken,
     };
 
     try {
@@ -102,6 +139,16 @@ export default function ContactPage() {
       {/* Contact Form */}
       <section className="mx-auto max-w-2xl px-6 pb-16">
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-white/10 bg-neutral-900/50 p-8">
+          {/* Honeypot field - hidden from humans, visible to bots */}
+          <input
+            type="text"
+            name="website"
+            style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label className="mb-2 block text-sm font-medium text-white/70">

@@ -24,7 +24,7 @@ const carePlans: Plan[] = [
     period: "/mo",
     tagline: "Keep the lights on: hosting, security, core updates.",
     ctaLabel: "Choose Essential",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "Managed hosting + SSL" },
       { label: "Weekly backups & uptime monitoring" },
@@ -41,7 +41,7 @@ const carePlans: Plan[] = [
     tagline: "Optimization & momentum. Most teams start here.",
     popular: true,
     ctaLabel: "Choose Growth",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "Everything in Essential" },
       { label: "Up to 4 update requests / month" },
@@ -57,7 +57,7 @@ const carePlans: Plan[] = [
     period: "/mo",
     tagline: "Your outsourced web & growth team.",
     ctaLabel: "Choose Premium",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "Everything in Growth" },
       { label: "Unlimited small updates (no rebuilds)" },
@@ -76,7 +76,7 @@ const builds: Plan[] = [
     price: "$1,099",
     tagline: "Single-page, fast launch, mobile-first.",
     ctaLabel: "Start Starter",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "One-page responsive website" },
       { label: "Contact form + basic analytics" },
@@ -91,7 +91,7 @@ const builds: Plan[] = [
     popular: true,
     tagline: "Multi-page site built to convert.",
     ctaLabel: "Start Business",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "4–8 pages (Home, Services, About, Contact, etc.)" },
       { label: "Lead forms + calendaring/booking support" },
@@ -105,7 +105,7 @@ const builds: Plan[] = [
     price: "$4,999+",
     tagline: "Complex functionality, integrations, custom features.",
     ctaLabel: "Start Custom",
-    ctaHref: "/start-project",
+    ctaHref: "/contact",
     features: [
       { label: "Custom functionality & integrations" },
       { label: "Advanced user management" },
@@ -245,7 +245,7 @@ export default function PricingSection() {
             Get in Touch
           </Link>
           <Link
-            href="/start-project"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-lg border border-muted px-6 py-3 font-medium hover:bg-muted/20 transition-colors"
           >
             Start a Project

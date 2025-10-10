@@ -69,8 +69,8 @@ export default function Page() {
             <Link href="/contact" className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all">
               Get a quote
             </Link>
-            <Link href="/work" className="inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-white font-medium hover:bg-white/10 transition-all">
-              See client work
+            <Link href="/ventures" className="inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-white font-medium hover:bg-white/10 transition-all">
+              See our ventures
             </Link>
           </div>
           <p className="text-sm text-muted-foreground">Or call <a className="underline hover:text-foreground transition-colors" href="tel:+14024136279">(402) 413-6279</a></p>
@@ -104,8 +104,8 @@ export default function Page() {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold gradient-text">Recent Lincoln projects</h2>
             <p className="text-muted-foreground">From breweries to studios, we build sites that drive bookings and foot traffic.</p>
-            <Link href="/work" className="inline-flex items-center text-accent-teal hover:text-accent-lime transition-colors">
-              Browse the portfolio →
+            <Link href="/ventures" className="inline-flex items-center text-accent-teal hover:text-accent-lime transition-colors">
+              See our ventures →
             </Link>
           </div>
 

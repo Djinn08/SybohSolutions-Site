@@ -7,6 +7,117 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2025-10-10] - Site Refactoring & Anti-Spam Implementation
+
+### Added
+- **Ventures Page**: New `/ventures` page showcasing Syboh Solutions' sub-divisions and ventures
+  - RoundTabl - Beer-wall and digital gifting platform (In Progress)
+  - Lincoln Web Design - Web projects and hosting with featured clients (Active)
+  - Bohvend - Vending division with current partnerships (Active)
+  - QR Collective - Custom QR design packs (In Progress)
+  - Syboh Solutions Operations Assistance - Tech installs and training (Active)
+  - Responsive 3-column card layout with gradient backgrounds and hover effects
+  - Status badges (Active/In Progress) for each venture
+  - Featured sub-projects for Lincoln Web Design with live links:
+    - **The Hermit's Hovel** (https://hermits-hovel.vercel.app) - Professional tattoo shop & mystical artistry specializing in dark academia and occult symbolism
+    - **The World of SaFrol Hodol** (https://worldofsafrolhodol.com) - Fantasy book trilogy author website by Scott Bohlin featuring epic fantasy world building
+  - Clickable project links with hover effects and external link indicators
+
+### Updated
+- **Lincoln Web Design Client Showcases**: Enhanced featured projects section with live website links
+  - **The Hermit's Hovel**: Dark academia tattoo shop website with mystical artistry focus
+    - Features professional tattoo services, portfolio gallery, and occult symbolism
+    - Dark theme with gold/bronze accents and medieval-inspired design
+    - Live site: https://hermits-hovel.vercel.app
+  - **The World of SaFrol Hodol**: Epic fantasy author website for Scott Bohlin
+    - Showcases "The Trian Trilogy" fantasy book series
+    - Features dramatic fantasy artwork, author bio, and book information
+    - Includes subscription system and Amazon purchase links
+    - Live site: https://worldofsafrolhodol.com
+  - Updated project descriptions to highlight specific services and specialties
+  - Added external link styling with hover effects and accessibility attributes
+
+### Changed
+- **Navigation Restructure**: Complete navigation overhaul
+  - Renamed "Work" tab to "Ventures" across all pages and routes
+  - Removed "Start a Project" tab from navigation (consolidated with "Book a consult" button)
+  - Updated navbar in `lib/constants.ts` and `components/site-header.tsx`
+  - All "Book a consult" buttons now point to `/contact` instead of `/start-project`
+  - Updated footer navigation to reflect new structure
+- **Sitemap Updates**: Updated `next-sitemap.config.js`
+  - Changed `/work` to `/ventures` with increased priority (0.8)
+  - Removed `/start-project` from sitemap
+- **SEO Metadata**: Updated page metadata
+  - New title: "Ventures | Syboh Solutions"
+  - New description highlighting sub-divisions and ventures
+- **Link Updates**: Updated all internal references site-wide
+  - `/work` → `/ventures` across all pages
+  - `/start-project` → `/contact` for all CTAs
+  - Updated: add-ons, pricing, about, home page, Lincoln web design page
+  - Updated PricingSection component with new CTA links
+- **Call-to-Action Consistency**: Standardized all CTAs to use `/contact`
+  - Removed scattered `/start-project` references
+  - Single source of truth for contact/booking actions
+
+### Removed
+- "Start a Project" navigation tab (functionality consolidated with "Book a consult" button)
+
+## [2025-10-10] - Anti-Spam Implementation
+
+### Added
+- **Honeypot Field**: Invisible form field to catch bot submissions
+  - Added `website` field to both ContactForm component and contact page
+  - Hidden using absolute positioning and accessibility attributes
+  - Bots fill this field while humans never see it
+- **Google reCAPTCHA v3**: Invisible bot protection without user interaction
+  - Integrated reCAPTCHA v3 script in main layout
+  - Added token generation on form submission
+  - No "I'm not a robot" checkbox - fully invisible to users
+  - Automatic score-based verification (0.0-1.0 scale)
+- **Backend Validation**: Comprehensive spam filtering
+  - Honeypot validation - blocks submissions with filled honeypot field
+  - reCAPTCHA token verification via Google API
+  - Score threshold checking (default: 0.5, adjustable)
+  - Detailed logging for spam attempts
+- **Documentation**: Complete setup and configuration guide
+  - Created `ANTI_SPAM_SETUP.md` with step-by-step instructions
+  - Environment variable documentation
+  - Score threshold guidelines
+  - Troubleshooting section
+  - Monitoring and testing instructions
+
+### Changed
+- **Contact API Route**: Enhanced with two-layer spam protection
+  - Added honeypot check before processing
+  - Added reCAPTCHA verification before sending email
+  - Returns success to bots without sending email (stealth blocking)
+  - Improved error messages for security failures
+- **Contact Forms**: Updated both forms with anti-spam measures
+  - `components/ContactForm.tsx` - Added honeypot and reCAPTCHA
+  - `app/contact/page.tsx` - Added honeypot and reCAPTCHA
+  - No visual changes to maintain user experience
+- **Layout**: Added reCAPTCHA script loading
+  - Conditionally loads only if site key is configured
+  - Uses async/defer for optimal performance
+  - Script loads in document head
+- **Lincoln Web Design Page**: Temporarily removed Google Maps embed due to connection issues
+
+### Technical
+- Zero impact on user experience - fully invisible protection
+- Two-layer defense: honeypot catches simple bots, reCAPTCHA catches sophisticated ones
+- Configurable score threshold for fine-tuning false positive rate
+- Comprehensive logging for monitoring spam attempts
+- Production-ready with proper error handling
+
+### Security
+- Honeypot field prevents form auto-fill bot attacks
+- reCAPTCHA v3 provides ML-powered bot detection
+- Score-based validation allows granular control
+- No user data collected by protection mechanisms
+- Stealth blocking prevents bot detection and adaptation
+
+## [Previous Releases]
+
 ### Added
 - Comprehensive security hardening for Vercel deployment
 - Security headers implementation (HSTS, CSP, X-Frame-Options, etc.)

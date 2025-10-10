@@ -138,7 +138,7 @@ function ProcessCarousel() {
           </button>
         </div>
         <a
-          href="/start-project"
+          href="/contact"
           className="rounded-xl border border-muted px-4 py-2 text-foreground hover:bg-muted/20 transition-colors"
         >
           Start a project
@@ -225,7 +225,7 @@ export default function AboutPage() {
         <div className="text-center pt-8">
           <p className="text-muted-foreground mb-4">Ready to get started?</p>
           <a 
-            href="/start-project" 
+            href="/contact" 
             className="inline-flex items-center justify-center rounded-lg gradient-bg px-6 py-3 text-background font-medium hover:opacity-90 transition-all"
           >
             Book a consult

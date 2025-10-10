@@ -23,9 +23,8 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/pricing", label: "Plans" },
   { href: "/lincoln-web-design", label: "Lincoln Web Design" },
-  { href: "/start-project", label: "Start a Project" },
   { href: "/add-ons", label: "Add-Ons" },
-  { href: "/work", label: "Work" },
+  { href: "/ventures", label: "Ventures" },
   { href: "/contact", label: "Contact" },
 ];
 

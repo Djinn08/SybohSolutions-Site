@@ -58,7 +58,7 @@ export function SiteHeader() {
 
         {/* Desktop CTA Button */}
         <Link
-          href="/start-project"
+          href="/contact"
           className="hidden md:inline-flex h-10 items-center justify-center rounded-lg gradient-bg px-6 text-background font-semibold transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap shadow-lg"
         >
           Book a consult
@@ -148,7 +148,7 @@ export function SiteHeader() {
                   Ready to get started with your project?
                 </p>
                 <Link
-                  href="/start-project"
+                  href="/contact"
                   onClick={closeMobileMenu}
                   className="w-full inline-flex h-12 items-center justify-center rounded-lg gradient-bg text-background font-semibold transition-all hover:opacity-90 shadow-lg"
                 >

@@ -102,8 +102,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Google reCAPTCHA v3 */}
+        {recaptchaSiteKey && (
+          <script
+            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+            async
+            defer
+          ></script>
+        )}
+      </head>
       <body
         className={`${poppins.variable} ${geistMono.variable} antialiased`}
       >
