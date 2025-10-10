@@ -47,6 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Improved typography hierarchy with larger headings and descriptions
   - Enhanced Lincoln Web Design section with dedicated sub-project cards
   - Added image placeholders for client website previews
+    - `/images/hermits-hovel-preview.jpg` - Ready for The Hermit's Hovel screenshot
+    - `/images/safrol-hodol-preview.jpg` - Ready for The World of SaFrol Hodol screenshot
   - Responsive design: mobile-first with proper spacing on all devices
 
 ### Changed
