@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
@@ -170,7 +169,7 @@ export default function PricingSection() {
 
       {/* Plans Grid */}
       <div className="grid gap-6 md:grid-cols-3">
-        {(activeTab === "care" ? carePlans : builds).map((plan, index) => (
+        {(activeTab === "care" ? carePlans : builds).map((plan) => (
           <div
             key={plan.name}
             className={`relative rounded-xl border p-6 transition-all duration-300 hover:scale-[1.02] ${

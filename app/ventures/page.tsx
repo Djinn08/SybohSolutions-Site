@@ -156,9 +156,6 @@ export default function VenturesPage() {
                             <div>
                               <p className="text-sm font-medium">{project.name}</p>
                               <p className="text-xs text-muted-foreground">{project.description}</p>
-                              {project.placeholder && (
-                                <p className="text-xs text-yellow-400/70 mt-1 italic">Media & details coming soon</p>
-                              )}
                             </div>
                           </div>
                         )}
